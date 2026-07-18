@@ -9,6 +9,44 @@ export const englishPractice = {
     questions: [
       { prompt: "다음 글의 목적으로 가장 적절한 것은?", options: ["도서관 운영 시간 단축에 항의하려고", "봉사 활동의 변경된 시간을 확인받으려고", "어린이 독서 프로그램의 참가비를 안내하려고", "마라톤 행사 자원봉사자를 모집하려고", "가족 독서 모임의 취소를 사과하려고"], answer: 1, explanation: "교통 통제로 독서 세션 시간이 11시로 바뀌었고, 봉사자에게 수요일까지 참여 가능 여부를 회신해 달라고 요청한다." },
       { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["도시 마라톤 때문에 일부 도로가 통제된다.", "도서관은 평소보다 두 시간 늦게 문을 연다.", "봉사자는 수요일까지 답장을 보내야 한다.", "새 시간이 어려우면 다른 봉사 날짜를 정할 수 있다.", "참가 가족들은 이미 변경 사실을 통보받았다."], answer: 4, explanation: "가족들에게 주말 전에 알리기 위해 봉사자의 신속한 답변이 필요하다고 했으므로, 아직 통보가 끝난 것이 아니다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "2점", title: "The Family Story Map",
+        passage: `<p>Dear Families,</p><p>Our school has created an online story map that introduces meaningful places in our neighborhood. Students interviewed long-time residents and added short recordings, old photographs, and walking routes to the map. We hope you will explore it together during the vacation and talk about how the area has changed. The map is available through the school website, and no account is required. Families may also suggest a place for the next update by completing the short form below the map. Your participation will help students see local history as something connected to everyday life.</p><p>Warm regards,<br>Mina Park<br>Social Studies Department</p>`,
+        vocab: [["meaningful", "의미 있는"], ["long-time resident", "오랜 거주민"], ["suggest", "제안하다"]],
+        questions: [
+          { prompt: "다음 글의 목적으로 가장 적절한 것은?", options: ["지역 지도 제작자를 채용하려고", "학교 홈페이지 계정 생성을 요청하려고", "온라인 이야기 지도를 가족이 함께 이용하도록 권하려고", "방학 중 역사 수업의 출석을 확인하려고", "오래된 사진의 반환 기한을 알리려고"], answer: 2, explanation: "학교가 만든 온라인 이야기 지도의 구성과 접속 방법을 설명하고, 방학 동안 가족이 함께 살펴보도록 권하고 있다." },
+          { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["지도 이용에는 별도 계정이 필요하다.", "학생들이 지역 주민을 인터뷰했다.", "지도에는 녹음과 사진이 포함되어 있다.", "가족은 다음 업데이트 장소를 제안할 수 있다.", "참여는 학생의 지역사 이해에 도움을 준다."], answer: 0, explanation: "학교 홈페이지에서 계정 없이 이용할 수 있다고 명시되어 있다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "Revision Request for a Research Brief",
+        passage: `<p>Dear Dr. Rivera,</p><p>Thank you for sending us your research brief on coastal farming. Before we include it in next month’s policy report, we need you to clarify two points raised by our review team. First, please explain how the farms in your sample were selected. Second, add the dates on which the water-quality measurements were taken. We have attached the reviewers’ notes and marked the relevant sections in your document. Please upload a revised file by August 8 so that the report can remain on schedule. These additions will make your conclusions easier for readers to evaluate.</p><p>Sincerely,<br>Daniel Cho<br>Report Editor</p>`,
+        vocab: [["clarify", "명확히 하다"], ["sample", "표본"], ["relevant", "관련 있는"]],
+        questions: [
+          { prompt: "다음 글의 목적으로 가장 적절한 것은?", options: ["해안 농업 연구의 지원자를 모집하려고", "정책 보고서의 발행 취소를 통보하려고", "수질 측정 장비의 사용법을 설명하려고", "검토 의견을 반영한 수정 파일 제출을 요청하려고", "연구 표본을 대신 선정해 주겠다고 제안하려고"], answer: 3, explanation: "검토팀이 제기한 두 사항을 보완하고 8월 8일까지 수정 파일을 올려 달라고 요청한다." },
+          { prompt: "Dr. Rivera가 추가해야 할 내용으로 언급되지 않은 것은?", options: ["정책 보고서의 판매 가격", "표본 농장 선정 방법", "수질 측정 날짜", "검토 의견에 대한 반영", "결론 평가에 필요한 정보"], answer: 0, explanation: "보고서 판매 가격은 전혀 언급되지 않았다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "2점", title: "A Damaged Ceramic Lamp",
+        passage: `<p>To Customer Service,</p><p>The ceramic desk lamp from order #L204 arrived this morning. Although the outer box was undamaged, the lamp base had a long crack and several small pieces fell out when I removed the wrapping. I purchased the lamp as a housewarming gift, so I cannot use it in its current condition. I have attached photographs of the package and the damaged base. Since the same color is no longer available on your website, I would like a full refund rather than a replacement. Please let me know whether you need the broken lamp returned.</p><p>Sincerely,<br>Olivia Grant</p>`,
+        vocab: [["undamaged", "손상되지 않은"], ["wrapping", "포장재"], ["replacement", "교환품"]],
+        questions: [
+          { prompt: "다음 글의 목적으로 가장 적절한 것은?", options: ["새 조명의 색상을 문의하려고", "포장 서비스에 만족을 표현하려고", "집들이 선물의 배송을 연기하려고", "깨진 조명을 직접 수리하는 법을 묻고자", "손상된 상품의 전액 환불을 요청하려고"], answer: 4, explanation: "파손 상태와 사진 첨부 사실을 설명한 뒤 같은 색이 없어 교환 대신 전액 환불을 요구한다." },
+          { prompt: "Olivia가 replacement를 원하지 않는 이유는?", options: ["포장 상자가 손상되었기 때문에", "조명을 이미 사용했기 때문에", "같은 색상이 더 이상 판매되지 않기 때문에", "주문 번호를 잊었기 때문에", "사진을 첨부하지 못했기 때문에"], answer: 2, explanation: "웹사이트에서 동일한 색상을 더 이상 구할 수 없어 교환이 아닌 환불을 선택했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "Reminder About the Workshop Grant",
+        passage: `<p>Dear Ms. Patel,</p><p>Last spring, the Community Arts Fund provided your workshop with a $900 interest-free grant to purchase printing equipment. Under our agreement, the first $300 payment was due on September 1. We have not yet received that payment or a request to change the schedule. If paying the full amount now is difficult, you may divide it into two payments, but we need to hear from you by Friday. Please reply with your payment date or contact our office to arrange a revised schedule. Keeping us informed will allow the fund to support other community projects this winter.</p><p>Best regards,<br>Marcus Hill<br>Program Officer</p>`,
+        vocab: [["interest-free", "무이자의"], ["be due", "기한이 되다"], ["revised schedule", "수정된 일정"]],
+        questions: [
+          { prompt: "다음 글의 목적으로 가장 적절한 것은?", options: ["인쇄 장비의 구매처를 추천하려고", "새로운 예술 지원 사업을 홍보하려고", "겨울 행사 참가비를 환불하려고", "지원금 상환 일정에 관한 회신을 요청하려고", "공동체 사업의 심사 결과를 발표하려고"], answer: 3, explanation: "기한이 지난 첫 상환액을 언급하고, 금요일까지 지급일이나 변경 일정을 회신해 달라고 요청한다." },
+          { prompt: "Ms. Patel이 할 수 있는 일로 언급된 것은?", options: ["지원금을 전액 면제받는다.", "첫 상환액을 두 번으로 나누어 낸다.", "인쇄 장비를 다른 사업에 판매한다.", "겨울까지 아무 연락도 하지 않는다.", "추가 이자를 먼저 지급한다."], answer: 1, explanation: "현재 전액 지급이 어렵다면 첫 300달러를 두 번의 지급으로 나눌 수 있다고 안내한다." }
+        ]
+      }
     ]
   },
   "02": {

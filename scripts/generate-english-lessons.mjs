@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { englishPractice } from "./english-practice-data.mjs";
+import { englishSourceAnalysis } from "./english-source-analysis.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const output = join(root, "lessons");
@@ -352,33 +353,81 @@ const renderTable = (table) => table ? `<div class="exam-table-wrap"><table clas
 
 const renderVocab = (vocab) => `<div class="vocab-strip" aria-label="핵심 어휘">${vocab.map(([word, meaning]) => `<span><strong>${escape(word)}</strong>${escape(meaning)}</span>`).join("")}</div>`;
 
-const renderQuestions = (lesson, questions) => questions.map((question, questionIndex) => {
-  const name = `question-${lesson.no.toLowerCase()}-${questionIndex + 1}`;
-  const options = question.options.map((option, optionIndex) => `<label class="practice-option"><input type="radio" name="${name}" value="${optionIndex}"><span class="option-number">${optionIndex + 1}</span><span>${escape(option)}</span></label>`).join("");
-  const answerText = question.options[question.answer];
-  return `<section class="practice-question" data-practice-question data-correct="${question.answer}">
+// 정답 번호가 순차적이거나 한 번호에 편중되지 않도록 고정된 무작위 배열을 사용합니다.
+// 77문항 기준 분포: ① 16, ② 16, ③ 15, ④ 15, ⑤ 15. 인접한 정답 번호는 중복되지 않습니다.
+const answerTargets = [2,5,3,1,4,1,5,3,4,2,4,1,4,1,3,1,2,5,1,5,2,5,2,3,2,5,3,1,4,5,3,5,4,3,1,2,3,2,3,4,1,2,5,1,2,1,4,5,2,3,5,4,5,2,1,5,1,4,2,3,2,1,4,5,3,5,4,2,4,3,1,2,4,3,4,1,3].map((number) => number - 1);
+let answerCursor = 0;
+
+const renderQuestions = (lesson, questions, setIndex = 0) => questions.map((question, questionIndex) => {
+  const name = `question-${lesson.no.toLowerCase()}-${setIndex + 1}-${questionIndex + 1}`;
+  const targetAnswer = answerTargets[answerCursor % answerTargets.length];
+  answerCursor += 1;
+  const reorderedOptions = [...question.options];
+  const [answerText] = reorderedOptions.splice(question.answer, 1);
+  reorderedOptions.splice(targetAnswer, 0, answerText);
+  const options = reorderedOptions.map((option, optionIndex) => `<label class="practice-option"><input type="radio" name="${name}" value="${optionIndex}"><span class="option-number">${optionIndex + 1}</span><span>${escape(option)}</span></label>`).join("");
+  return `<section class="practice-question" data-practice-question data-correct="${targetAnswer}">
         <div class="question-heading"><span>문제 ${questionIndex + 1}</span><h3>${question.prompt}</h3></div>
         <div class="practice-options">${options}</div>
         <div class="question-actions"><button class="button primary small" type="button" data-check-answer>정답 확인</button><p class="answer-result" data-answer-result aria-live="polite">선택지를 고른 뒤 정답을 확인하세요.</p></div>
-        <div class="answer-panel" data-answer-panel hidden><strong>정답 ${question.answer + 1}번 · ${escape(answerText)}</strong><p>${escape(question.explanation)}</p></div>
+        <div class="answer-panel" data-answer-panel hidden><strong>정답 ${targetAnswer + 1}번 · ${escape(answerText)}</strong><p>${escape(question.explanation)}</p></div>
       </section>`;
 }).join("");
+
+const renderPracticeSet = (lesson, set, setIndex, setCount) => {
+  const questions = renderQuestions(lesson, set.questions, setIndex);
+  const table = renderTable(set.table);
+  const insertSentence = set.insert ? `<div class="insert-sentence"><span>주어진 문장</span><p>${escape(set.insert)}</p></div>` : "";
+  const sourceLabel = set.sourceRef && set.sourceRef !== "강별" ? `${escape(set.sourceRef)} 연계` : "강별 유형 연계";
+  const heading = setCount > 1 ? `${sourceLabel} 변형문제` : "EBS 연계형 변형문제";
+  return `<section class="article-section practice-set" id="practice-${lesson.no.toLowerCase()}-${setIndex + 1}"><div class="practice-set-head"><div><p class="practice-label">영어시험연구소 제작 · ${escape(set.level)} · ${sourceLabel}</p><h2>${heading}</h2><p>교재 문장을 옮기지 않고 같은 판단 원리를 적용해 새로 쓴 지문입니다. 먼저 제한 시간 안에 풀고 정답 해설을 확인하세요.</p></div><span class="question-count">${set.questions.length}문항</span></div>
+        <div class="reading-passage"><div class="passage-heading"><span>PASSAGE ${setIndex + 1}</span><h3>${escape(set.title)}</h3></div>${insertSentence}${set.passage}${table}</div>
+        ${renderVocab(set.vocab)}
+        <div class="practice-question-list">${questions}</div>
+      </section>`;
+};
+
+const renderSourceCard = (lesson, source, sourceIndex, practiceSet, setCount) => {
+  const flow = source.flow.map((item, index) => `<li><span>${index + 1}</span><p>${escape(item)}</p></li>`).join("");
+  const grammar = source.grammar.map(([pattern, note]) => `<tr><th><code>${escape(pattern)}</code></th><td>${escape(note)}</td></tr>`).join("");
+  const vocab = source.vocab.map(([word, meaning, role]) => `<tr><th>${escape(word)}</th><td>${escape(meaning)}</td><td>${escape(role)}</td></tr>`).join("");
+  const traps = source.traps.map(([number, reason]) => `<tr><th>${escape(number)}</th><td>${escape(reason)}</td></tr>`).join("");
+  return `<section class="source-learning-unit" id="source-${lesson.no.toLowerCase()}-${sourceIndex + 1}">
+      <article class="source-analysis-card">
+        <header class="source-analysis-head"><div><p class="source-ref">교재 ${source.page}쪽 · ${escape(source.ref)} · ${escape(source.code)}</p><h2>${escape(source.ref)} 제시문 분석</h2><p>${escape(source.topic)}</p></div><span class="source-answer">원문 정답 ${escape(source.answer)}</span></header>
+        <section class="analysis-block"><h3>제시문 해설</h3><p>${escape(source.summary)}</p></section>
+        <section class="analysis-block"><h3>글의 전개 구조</h3><ol class="analysis-flow">${flow}</ol></section>
+        <section class="analysis-block"><h3>핵심 영문법</h3><div class="table-wrap"><table class="study-table grammar-table"><tbody>${grammar}</tbody></table></div></section>
+        <section class="analysis-block"><h3>필수 어휘·숙어</h3><div class="table-wrap"><table class="study-table"><thead><tr><th>표현</th><th>뜻</th><th>제시문에서의 역할</th></tr></thead><tbody>${vocab}</tbody></table></div></section>
+        <section class="analysis-block"><h3>원문 문제 해제</h3><div class="solution-box"><strong>정답 ${escape(source.answer)}</strong><p>${escape(source.solution)}</p></div><div class="table-wrap trap-table"><table class="study-table"><thead><tr><th>오답</th><th>틀린 이유</th></tr></thead><tbody>${traps}</tbody></table></div></section>
+        <a class="button primary" href="#practice-${lesson.no.toLowerCase()}-${sourceIndex + 1}">${escape(source.ref)} 연계 변형문제 풀기 ↓</a>
+      </article>
+      ${renderPracticeSet(lesson, practiceSet, sourceIndex, setCount)}
+    </section>`;
+};
 
 for (const [index, lesson] of lessons.entries()) {
   const previous = lessons[index - 1];
   const next = lessons[index + 1];
   const practice = englishPractice[lesson.no];
   if (!practice) throw new Error(`Missing practice data for lesson ${lesson.no}`);
-  const pageTitle = `2027 수능특강 영어 ${lesson.no} ${lesson.title} 변형문제`;
-  const description = `${pageTitle}: 직접 제작한 영어 지문과 ${practice.questions.length}개 객관식 문항, 정답 해설, 핵심 어휘를 제공합니다.`;
+  const sources = englishSourceAnalysis[lesson.no] || [];
+  const { extraSets = [], ...basePractice } = practice;
+  const practiceSets = [{ ...basePractice, sourceRef: basePractice.sourceRef || (sources.length ? "Gateway" : "강별") }, ...extraSets];
+  if (sources.length && sources.length !== practiceSets.length) throw new Error(`Source/practice count mismatch for lesson ${lesson.no}`);
+  const questionCount = practiceSets.reduce((total, set) => total + set.questions.length, 0);
+  const pageTitle = sources.length
+    ? `2027 수능특강 영어 ${lesson.no} ${lesson.title} 제시문 해설·문법·변형문제`
+    : `2027 수능특강 영어 ${lesson.no} ${lesson.title} 변형문제`;
+  const description = `${pageTitle}: 교재 제시문 해설, 핵심 영문법·어휘, 원문 문제 해제와 자체 제작 변형문제 ${questionCount}문항을 제공합니다.`;
   const canonical = `https://englishexamlab.kr/lessons/${filename(lesson)}`;
   const stepCards = lesson.steps.map((step, i) => `<article class="route-step"><span class="step-no">${i + 1}</span><h3>${i + 1}단계</h3><p>${escape(step)}</p></article>`).join("");
   const errorRows = lesson.errors.map((error, i) => `<tr><td>${i + 1}</td><td>${escape(error)}</td><td>${escape(lesson.steps[Math.min(i, lesson.steps.length - 1)])}</td></tr>`).join("");
   const recordRows = lesson.record.map((item, i) => `<tr><td>${i + 1}</td><td>${escape(item)}</td><td class="write-space">교재 지문을 공부한 뒤 직접 작성</td></tr>`).join("");
   const checkItems = lesson.checks.map((item) => `<li>${escape(item)}</li>`).join("");
-  const practiceQuestions = renderQuestions(lesson, practice.questions);
-  const dataTable = renderTable(practice.table);
-  const insertSentence = practice.insert ? `<div class="insert-sentence"><span>주어진 문장</span><p>${escape(practice.insert)}</p></div>` : "";
+  const learningContent = sources.length
+    ? `<section class="article-section source-analysis-intro"><p class="practice-label">EBS TEXT ANALYSIS</p><h2>교재 제시문 ${sources.length}개 완전 분석</h2><p>원문을 그대로 옮기지 않고 문항 번호와 쪽수를 기준으로 내용, 전개, 문법, 어휘, 정답과 오답을 분석합니다. 각 분석 다음에는 같은 판단 원리를 적용한 자체 변형문제가 이어집니다.</p><nav class="source-jump" aria-label="제시문 분석 바로가기">${sources.map((source, sourceIndex) => `<a href="#source-${lesson.no.toLowerCase()}-${sourceIndex + 1}">${escape(source.ref)}</a>`).join("")}</nav></section><div class="source-learning-units">${sources.map((source, sourceIndex) => renderSourceCard(lesson, source, sourceIndex, practiceSets[sourceIndex], practiceSets.length)).join("")}</div>`
+    : practiceSets.map((set, setIndex) => renderPracticeSet(lesson, set, setIndex, practiceSets.length)).join("");
   const prevLink = previous ? `<a class="button secondary small" href="${filename(previous)}">← ${previous.no} ${escape(previous.title)}</a>` : `<a class="button secondary small" href="../2027-suneung-english.html">← 전체 목차</a>`;
   const nextLink = next ? `<a class="button primary small" href="${filename(next)}">${next.no} ${escape(next.title)} →</a>` : `<a class="button primary small" href="../2027-suneung-english.html">전체 목차로 →</a>`;
 
@@ -416,17 +465,13 @@ for (const [index, lesson] of lessons.entries()) {
   <main id="main">
     <section class="page-hero"><div class="container"><div class="breadcrumb"><a href="../index.html">홈</a><span>›</span><a href="../2027-suneung-english.html">2027 수능특강 영어</a><span>›</span><span>${lesson.no} ${escape(lesson.title)}</span></div><div class="page-title"><div><p class="section-kicker">${escape(lesson.part)} · 교재 ${lesson.page}쪽부터</p><h1>${lesson.no}<br>${escape(lesson.title)}</h1><p>${escape(lesson.focus)}</p></div><div class="title-badge"><strong>${lesson.no}</strong><span>${escape(lesson.part)}</span></div></div></div></section>
     <section class="section"><div class="container content-layout"><article class="legal lesson-article">
-      <section class="article-section practice-set"><div class="practice-set-head"><div><p class="practice-label">영어시험연구소 제작 · ${escape(practice.level)}</p><h2>EBS 연계형 변형문제</h2><p>교재의 강별 유형과 사고 과정을 반영해 새로 쓴 지문입니다. 먼저 제한 시간 안에 풀고 정답 해설을 확인하세요.</p></div><span class="question-count">${practice.questions.length}문항</span></div>
-        <div class="reading-passage"><div class="passage-heading"><span>PASSAGE</span><h3>${escape(practice.title)}</h3></div>${insertSentence}${practice.passage}${dataTable}</div>
-        ${renderVocab(practice.vocab)}
-        <div class="practice-question-list">${practiceQuestions}</div>
-      </section>
+      ${learningContent}
       <section class="article-section"><h2>풀이 후 핵심 공략</h2><p>${escape(lesson.intro)}</p><div class="lesson-key"><span>핵심 판단식</span><strong>${escape(lesson.key)}</strong></div><div class="route-grid">${stepCards}</div></section>
       <section class="article-section"><h2>자주 나오는 오답 패턴</h2><div class="table-wrap"><table class="study-table"><thead><tr><th>번호</th><th>잘못된 판단</th><th>고칠 행동</th></tr></thead><tbody>${errorRows}</tbody></table></div></section>
       <section class="article-section"><h2>학습 완료 체크</h2><ul class="check-list">${checkItems}</ul><div class="note-box"><strong>다시 볼 기준</strong><p>세 항목 중 하나라도 설명하지 못하거나 정답 근거를 지문에서 찾지 못했다면, 다음 날 같은 지문을 다시 풀지 말고 기록표의 빈칸만 먼저 복원하세요.</p></div></section>
       <section class="article-section"><h2>자료 이용 안내</h2><p>이 페이지의 영어 지문, 문항, 선택지와 해설은 영어시험연구소가 직접 작성했습니다. 2027학년도 EBS 수능특강 영어의 강별 유형에 연계한 비공식 학습 자료이며, EBS 교재의 원문·문항·정답을 복제하지 않습니다.</p></section>
       <nav class="lesson-nav" aria-label="이전·다음 학습 페이지">${prevLink}${nextLink}</nav>
-    </article><aside class="sidebar"><div class="side-card"><h2>교재 위치</h2><ul><li>${escape(lesson.part)}</li><li>${lesson.no} ${escape(lesson.title)}</li><li>${lesson.page}쪽부터</li></ul></div><div class="side-card"><h2>바로가기</h2><p><a href="../2027-suneung-english.html">30강 전체 목차 →</a></p><p><a href="../study-plan.html">9주 학습 계획 →</a></p><p><a href="../suneung-english-wrong-answer-note.html">오답 노트 작성법 →</a></p></div></aside></div></section>
+    </article><aside class="sidebar">${sources.length ? `<div class="side-card"><h2>이 페이지 자료</h2><ul><li>교재 제시문 ${sources.length}개 분석</li><li>영문법·어휘 설명</li><li>원문 정답·오답 해제</li><li>연계 변형문제 ${questionCount}문항</li></ul></div>` : ""}<div class="side-card"><h2>교재 위치</h2><ul><li>${escape(lesson.part)}</li><li>${lesson.no} ${escape(lesson.title)}</li><li>${lesson.page}쪽부터</li></ul></div><div class="side-card"><h2>바로가기</h2><p><a href="../2027-suneung-english.html">30강 전체 목차 →</a></p><p><a href="../study-plan.html">9주 학습 계획 →</a></p><p><a href="../suneung-english-wrong-answer-note.html">오답 노트 작성법 →</a></p></div></aside></div></section>
   </main>
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div><p class="footer-brand">영어시험연구소</p><p>2027 수능특강 영어를 근거와 판단 순서 중심으로 공부합니다.</p></div><div><h2>교재별 가이드</h2><div class="footer-links"><a href="../2027-suneung-english.html">수능특강 영어</a><a href="../2027-suneung-reading.html">영어독해연습</a><a href="../2027-suneung-listening.html">영어듣기</a></div></div><div><h2>운영 안내</h2><div class="footer-links"><a href="../about.html">사이트 소개</a><a href="../privacy.html">개인정보처리방침</a><a href="../copyright.html">저작권·출처 안내</a><a href="../contact.html">문의</a></div></div></div><div class="footer-bottom">© <span data-current-year>2026</span> 영어시험연구소.</div></div></footer>
   <script src="../assets/app.js" defer></script>
