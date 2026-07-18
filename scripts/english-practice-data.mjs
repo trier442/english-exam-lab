@@ -50,12 +50,50 @@ export const englishPractice = {
     ]
   },
   "02": {
-    level: "2점", title: "The Backup Copy",
-    passage: `<p>Mara had rehearsed her science presentation for weeks, yet her hands trembled as she connected her laptop to the classroom screen. When the screen remained black, she pressed every button she could think of. Her teacher glanced at the clock, and whispers spread across the room. Mara felt heat rise to her face. Just then, her partner Jin opened his backpack and pulled out a neatly printed set of their slides. “I thought we might need these,” he said. The teacher smiled and asked them to begin. As Mara held the first page, the familiar diagrams guided her through the opening lines. Her voice grew steadier, and by the final slide she was speaking without looking down.</p>`,
-    vocab: [["rehearse", "예행연습하다"], ["tremble", "떨다"], ["steadier", "더 안정된"]],
+    level: "2점", title: "A Familiar Chime",
+    passage: `<p>At the annual antiques fair, Felix promised his grandmother that he would find the small clock she had sent for repair months earlier. The repairer’s booth number, however, had been changed, and rows of nearly identical tables filled the hall. Felix walked past glass cases twice, uncertain whether he was even in the correct section. Then a clear three-note chime rose above the crowd. He stopped. His grandmother’s clock had always played those notes slightly out of rhythm. Following the sound, he reached a corner table where a silver clock stood beneath a handwritten card bearing her name. The repairer wound it once more, and the uneven melody sounded again. Felix laughed and sent his grandmother a photograph: “I found it—and it still sounds like ours.”</p>`,
+    vocab: [["antiques fair", "골동품 박람회"], ["out of rhythm", "박자가 어긋나게"], ["wind", "태엽을 감다"]],
     questions: [
-      { prompt: "Mara의 심경 변화로 가장 적절한 것은?", options: ["confident → bored", "embarrassed → relieved", "grateful → suspicious", "curious → disappointed", "calm → jealous"], answer: 1, explanation: "화면이 켜지지 않아 얼굴이 달아오를 만큼 당황했지만, 인쇄된 예비 자료로 발표를 무사히 이어 가며 안정을 되찾는다." },
-      { prompt: "Jin에 관한 내용으로 가장 적절한 것은?", options: ["발표 연습을 거부했다.", "교사에게 발표 연기를 요청했다.", "인쇄된 슬라이드를 미리 준비했다.", "고장 난 화면을 직접 수리했다.", "마지막 슬라이드를 잃어버렸다."], answer: 2, explanation: "Jin은 필요할 가능성을 생각해 슬라이드 출력물을 가방에 준비해 두었다." }
+      { prompt: "Felix의 심경 변화로 가장 적절한 것은?", options: ["confused → pleased", "confident → embarrassed", "excited → frightened", "relieved → nervous", "bored → disappointed"], answer: 0, explanation: "바뀐 부스와 비슷한 진열대 사이에서 위치를 몰라 혼란스러워했지만, 익숙한 종소리를 따라 시계를 찾은 뒤 웃으며 기뻐한다." },
+      { prompt: "Felix가 시계를 알아보는 데 결정적으로 도움이 된 것은?", options: ["수리공의 전화", "할머니의 사진", "은색 진열장", "약간 박자가 어긋난 세 음의 종소리", "기존 부스 번호"], answer: 3, explanation: "할머니의 시계만이 내던 조금 불규칙한 세 음을 듣고 소리를 따라가 시계를 찾는다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "2점", title: "The Decision in the Portal",
+        passage: `<p>For three weeks, Nari had checked every line of her exchange-program application. She had uploaded her language certificate, asked two teachers to review her essay, and even practiced introducing herself in the host country’s language. On decision day, she opened the school portal before breakfast. A green dot appeared beside the word “updated,” and she pictured herself meeting her future classmates. She clicked the notice. The first sentence thanked her for the careful application; the second said that no places remained. Nari read it again, hoping she had misunderstood. The green dot blurred as tears filled her eyes. She closed the practice notebook on her desk and sat quietly, unable to imagine using the sentences she had worked so hard to learn.</p>`,
+        vocab: [["certificate", "증명서"], ["portal", "온라인 정보 창구"], ["blur", "흐릿해지다"]],
+        questions: [
+          { prompt: "Nari의 심경 변화로 가장 적절한 것은?", options: ["ashamed → proud", "hopeful → disheartened", "confused → grateful", "concerned → satisfied", "indifferent → amused"], answer: 1, explanation: "철저히 준비하고 미래를 상상할 때는 기대에 차 있지만, 자리가 없다는 통보를 읽은 뒤 눈물을 보이며 낙담한다." },
+          { prompt: "Nari가 notice를 다시 읽은 이유로 가장 적절한 것은?", options: ["감사 문구를 외우려고", "제출 파일을 삭제하려고", "결정을 잘못 이해했기를 바랐기 때문에", "교사에게 새 추천서를 요청하려고", "호스트 국가의 언어를 번역하려고"], answer: 2, explanation: "거절 결과를 받아들이기 어려워 자신이 내용을 오해했기를 바라며 공지를 다시 읽었다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "One Rehearsal Too Many",
+        passage: `<p>Leo had trained his voice all summer and believed the difficult final note in the school musical belonged to him. During rehearsal, the director asked the cast to save their voices and mark the last song quietly. Leo noticed several younger actors listening, so he decided to sing the note at full power. It rang through the theater, and he smiled at their impressed faces. Then a sharp pain tightened his throat. When he tried the next line, only a rough whisper came out. Another student had to finish his part while Leo stood beside the piano holding a cup of warm water. Watching the cast repeat the scene without him, he wished he had followed the director’s instruction instead of trying to display his range.</p>`,
+        vocab: [["mark", "(연습에서) 힘을 빼고 부르다"], ["range", "음역"], ["rough whisper", "거친 속삭임"]],
+        questions: [
+          { prompt: "Leo의 심경 변화로 가장 적절한 것은?", options: ["anxious → relieved", "confident → regretful", "pleased → alarmed", "disappointed → satisfied", "delighted → indifferent"], answer: 1, explanation: "자신의 실력과 고음을 확신해 무리해서 노래하지만 목을 다쳐 배역을 이어 가지 못하자 지시를 따르지 않은 일을 후회한다." },
+          { prompt: "Leo가 마지막 음을 힘껏 부른 주된 이유는?", options: ["감독이 그렇게 지시해서", "다른 배우들에게 자신의 음역을 보여 주려고", "공연이 이미 시작되어서", "목의 통증을 확인하려고", "다른 학생의 배역을 대신하려고"], answer: 1, explanation: "후배 배우들이 듣는 것을 보고 자신의 음역을 과시하려고 감독의 지시와 달리 전력을 다해 불렀다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "2점", title: "Footsteps Above the Studio",
+        passage: `<p>Imani stayed late in the community dance studio to practice a piece for her sister’s wedding. Rain tapped softly against the high windows, and the empty room made every turn feel wide and effortless. She played the cheerful song again, pleased that the final sequence at last matched the music. As she reached for her bag, a heavy step sounded on the floor above. The building manager had told her that the upper rooms were locked for repairs. A second step crossed directly over her head, followed by the slow scrape of something being dragged. Imani turned off the speaker. She slipped behind the curtain near the emergency exit and held her phone tightly, listening as the footsteps stopped above the studio door.</p>`,
+        vocab: [["effortless", "힘들이지 않는 듯한"], ["scrape", "긁히며 끌리는 소리"], ["emergency exit", "비상구"]],
+        questions: [
+          { prompt: "Imani의 심경 변화로 가장 적절한 것은?", options: ["fearful → relieved", "hopeful → disappointed", "pleased → frightened", "relaxed → envious", "excited → bored"], answer: 2, explanation: "동작이 음악과 맞아 기뻐하던 중 잠겨 있어야 할 위층에서 발소리를 듣고 커튼 뒤에 숨을 만큼 두려워한다." },
+          { prompt: "Imani가 위층의 발소리를 위협적으로 느낀 근거는?", options: ["비가 갑자기 그쳤기 때문에", "언니가 결혼식을 취소했기 때문에", "스피커가 작동하지 않았기 때문에", "관리자가 위층 방들이 잠겨 있다고 말했기 때문에", "비상구가 스튜디오와 멀리 떨어져 있었기 때문에"], answer: 3, explanation: "수리 때문에 잠겨 있어야 할 공간에서 발소리와 물건 끄는 소리가 났으므로 정상적인 상황이 아니라고 판단했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "A Seat by the Heater",
+        passage: `<p>After two delayed trains and a crowded replacement bus, Daniel reached the mountain station long after dark. His suitcase wheel had broken on the icy road, and his gloves were wet from pulling it through the snow. The last taxi had already left. Daniel lowered himself onto a metal bench, too tired even to call the guesthouse again. A cleaner pushing a cart noticed his shaking hands. Without asking for an explanation, she moved a wooden chair beside the staff-room heater and brought him a mug of hot barley tea. She then wrote the number of a night driver on a scrap of paper and waited until the call connected. The heater clicked softly beside him. As warmth returned to his fingers, the journey no longer felt like a problem he had to solve entirely alone.</p>`,
+        vocab: [["replacement bus", "대체 운행 버스"], ["lower oneself", "힘겹게 몸을 낮추다"], ["barley tea", "보리차"]],
+        questions: [
+          { prompt: "Daniel의 심경 변화로 가장 적절한 것은?", options: ["ashamed → grateful", "curious → disappointed", "encouraged → frustrated", "exhausted → comforted", "indifferent → satisfied"], answer: 3, explanation: "연이은 지연과 눈길 때문에 몹시 지쳐 있었지만, 청소 직원의 조용한 도움과 따뜻함을 받으며 혼자가 아니라는 위안을 얻는다." },
+          { prompt: "cleaner가 Daniel을 위해 한 일로 언급되지 않은 것은?", options: ["난방기 옆에 의자를 놓아 주었다.", "따뜻한 보리차를 가져다주었다.", "야간 운전자의 번호를 적어 주었다.", "전화가 연결될 때까지 기다렸다.", "고장 난 여행 가방 바퀴를 고쳐 주었다."], answer: 4, explanation: "직원은 자리, 차, 운전자 연락처와 통화 연결을 도왔지만 가방 바퀴를 수리하지는 않았다." }
+        ]
+      }
     ]
   },
   "03": {
