@@ -397,6 +397,83 @@ h1 {
 
 .lesson-article { max-width: none; }
 
+.practice-set {
+  padding: 30px;
+  background: #f8faff;
+  border: 1px solid #cfdcf2;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(16, 35, 63, .07);
+}
+
+.practice-set-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.practice-set-head h2 { margin-bottom: 8px; }
+.practice-set-head p { margin-bottom: 0; color: var(--ink-soft); }
+.practice-label { color: var(--blue) !important; font-size: .78rem; font-weight: 850; letter-spacing: .08em; }
+.question-count { flex: 0 0 auto; padding: .48rem .72rem; color: var(--navy); background: var(--lime); border-radius: 999px; font-size: .8rem; font-weight: 850; }
+
+.reading-passage {
+  padding: 30px clamp(22px, 5vw, 46px);
+  color: #172234;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.07rem;
+  line-height: 1.92;
+  word-break: normal;
+}
+
+.reading-passage p { margin-bottom: 1.15em; }
+.reading-passage p:last-child { margin-bottom: 0; }
+.passage-heading { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.passage-heading span { color: var(--blue); font-family: Pretendard, "Noto Sans KR", sans-serif; font-size: .72rem; font-weight: 900; letter-spacing: .16em; }
+.passage-heading h3 { margin: 4px 0 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.36rem; line-height: 1.3; letter-spacing: -.02em; }
+.passage-blank { display: inline-block; min-width: 180px; border-bottom: 2px solid var(--navy); }
+.insertion-mark { display: inline-flex; margin: 0 .15rem; padding: 0 .28rem; color: var(--blue); background: var(--blue-soft); border-radius: 5px; font-family: Pretendard, "Noto Sans KR", sans-serif; font-size: .78rem; font-weight: 850; }
+.insert-sentence { margin: 0 0 22px; padding: 16px 18px; background: #f2f6fc; border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; }
+.insert-sentence span { color: var(--blue); font-family: Pretendard, "Noto Sans KR", sans-serif; font-size: .72rem; font-weight: 850; }
+.insert-sentence p { margin: 4px 0 0; font-weight: 700; }
+
+.vocab-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 14px 0 28px; overflow: hidden; background: var(--line); border: 1px solid var(--line); border-radius: 13px; }
+.vocab-strip span { display: grid; gap: 2px; padding: 11px 13px; color: var(--ink-soft); background: #fff; font-size: .78rem; }
+.vocab-strip strong { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: .88rem; }
+
+.exam-table-wrap { margin-top: 24px; overflow-x: auto; }
+.exam-data-table { width: 100%; border-collapse: collapse; font-family: Pretendard, "Noto Sans KR", sans-serif; font-size: .9rem; text-align: center; }
+.exam-data-table caption { padding-bottom: 10px; font-weight: 800; text-align: left; }
+.exam-data-table th, .exam-data-table td { padding: 10px; border: 1px solid var(--line); }
+.exam-data-table thead th { color: #fff; background: var(--navy); }
+.exam-data-table tbody th { background: var(--cloud); }
+
+.practice-question-list { display: grid; gap: 18px; }
+.practice-question { padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 18px; }
+.question-heading { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 12px; margin-bottom: 18px; }
+.question-heading > span { margin-top: 2px; padding: .28rem .52rem; color: #fff; background: var(--blue); border-radius: 8px; font-size: .72rem; font-weight: 850; white-space: nowrap; }
+.question-heading h3 { margin: 0; font-size: 1.04rem; line-height: 1.55; }
+.question-heading h3 em { color: var(--ink-soft); font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+.practice-options { display: grid; gap: 8px; }
+.practice-option { display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: start; gap: 10px; padding: 11px 12px; color: var(--ink-soft); border: 1px solid transparent; border-radius: 11px; cursor: pointer; transition: background .18s ease, border-color .18s ease; }
+.practice-option:hover { background: var(--cloud); }
+.practice-option:has(input:checked) { color: var(--navy); background: var(--blue-soft); border-color: #b9cff8; }
+.practice-option input { margin-top: .3rem; accent-color: var(--blue); }
+.option-number { font-weight: 850; }
+.practice-option.is-correct { color: #075f4f; background: var(--mint-soft); border-color: #72c7b4; }
+.practice-option.is-wrong { color: #a33a1d; background: #fff0eb; border-color: #f3aa94; }
+.question-actions { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.answer-result { margin: 0; color: var(--ink-soft); font-size: .84rem; }
+.answer-result.correct { color: #08715e; font-weight: 850; }
+.answer-result.wrong { color: #b43f20; font-weight: 850; }
+.answer-panel { margin-top: 14px; padding: 17px 19px; background: var(--mint-soft); border-left: 4px solid var(--mint); border-radius: 0 13px 13px 0; }
+.answer-panel strong { color: #075f4f; }
+.answer-panel p { margin: 7px 0 0; color: var(--ink-soft); font-size: .9rem; }
+
 .lesson-key {
   display: grid;
   gap: 7px;
@@ -502,6 +579,15 @@ h1 {
   .page-title h1 { font-size: 2.2rem; }
   .lesson-nav { align-items: stretch; flex-direction: column; }
   .lesson-nav .button { width: 100%; }
+  .practice-set { padding: 18px; border-radius: 18px; }
+  .practice-set-head { display: block; }
+  .question-count { display: inline-flex; margin-top: 14px; }
+  .reading-passage { padding: 22px 18px; font-size: 1rem; }
+  .vocab-strip { grid-template-columns: 1fr; }
+  .practice-question { padding: 18px; }
+  .question-heading { grid-template-columns: 1fr; }
+  .question-heading > span { justify-self: start; }
+  .question-actions { align-items: stretch; flex-direction: column; }
 }
 
 @media print {
@@ -509,4 +595,5 @@ h1 {
   .section, .page-hero { padding: 20px 0; }
   .content-layout { display: block; }
   .chapter-card { break-inside: avoid; }
+  .answer-panel[hidden] { display: block; }
 }
