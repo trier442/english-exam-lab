@@ -22,6 +22,10 @@
         const text = (card.dataset.search || card.textContent).toLocaleLowerCase('ko');
         const match = !query || text.includes(query);
         card.classList.toggle('is-hidden', !match);
+        if (query && match && input.hasAttribute('data-filter-open')) {
+          const details = card.closest('details');
+          if (details) details.open = true;
+        }
         if (match) visible += 1;
       });
 
