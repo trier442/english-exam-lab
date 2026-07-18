@@ -144,30 +144,144 @@ export const englishPractice = {
     ]
   },
   "04": {
-    level: "2점", title: "A Productive Pause",
-    passage: `<p>In many meetings, silence is treated as a problem to be solved. The moment a speaker finishes, someone rushes to fill the gap. But a short pause can improve a group’s thinking. People who need a little more time to organize their ideas get a chance to participate, and quick speakers can reconsider whether their first response is actually useful. Silence also makes disagreement less personal: members can examine a proposal before reacting to its author. A productive pause does not mean allowing a discussion to lose direction. It means giving thought a few seconds to arrive before words take over.</p>`,
-    vocab: [["fill the gap", "공백을 메우다"], ["reconsider", "재고하다"], ["take over", "장악하다"]],
+    level: "3점", title: "Rivals at the Same Table",
+    passage: `<p>Two ferry companies served the same island and competed fiercely for passengers. Each advertised cleaner cabins and more convenient departure times. Yet both used the island’s single dock, where one accident could close the route for everyone. The companies therefore shared weather reports, coordinated emergency drills, and agreed on common boarding signals. They did not exchange pricing plans or stop improving their own service. Instead, they drew a clear line between areas where cooperation protected the whole transport system and areas where competition gave travelers better choices. Managers from both companies met monthly to review that line. Their success depended neither on constant rivalry nor on unlimited cooperation, but on maintaining a deliberate balance between the two.</p>`,
+    vocab: [["fiercely", "치열하게"], ["coordinate", "조율하다"], ["deliberate", "의도적이고 신중한"]],
     questions: [
-      { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["회의에서는 침묵을 없애기 위해 사회자가 계속 말해야 한다.", "짧은 침묵은 더 신중하고 폭넓은 참여를 돕는다.", "빠르게 말하는 사람이 토론을 이끄는 것이 효율적이다.", "의견 충돌을 피하려면 반대 발언을 제한해야 한다.", "회의의 방향은 발언 수보다 참석자 수에 달려 있다."], answer: 1, explanation: "짧은 멈춤이 생각할 시간과 참여 기회를 제공하고 성급한 반응을 줄인다는 것이 핵심이다." },
-      { prompt: "윗글에 따르면 productive pause가 의미하는 것은?", options: ["토론을 끝내는 것", "발언자를 교체하는 것", "생각이 형성될 시간을 주는 것", "반대 의견을 기록하지 않는 것", "회의 시간을 무제한으로 늘리는 것"], answer: 2, explanation: "마지막 문장에서 생각이 도착할 몇 초를 주는 것이라고 직접 설명한다." }
+      { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["공동 시설을 사용하는 기업은 안전을 위해 모든 가격 경쟁까지 완전히 중단해야 한다.", "운송 안전은 한 기업이 독립적으로 책임지는 것이 효율적이다.", "경쟁 기업은 공동 이익과 차별화 영역을 나누어 균형을 잡아야 한다.", "서비스 품질을 높이려면 기업 간 정보를 전면적으로 공개해야 한다.", "이용자의 선택권은 동일한 운영 기준이 마련될 때 줄어들 수 있다."], answer: 2, explanation: "안전처럼 전체 시스템에 필요한 영역에서는 협력하고 가격·서비스에서는 경쟁하면서 두 활동의 경계를 의도적으로 관리해야 한다는 내용이다." },
+      { prompt: "두 회사가 서로 공유하지 않은 것으로 언급된 것은?", options: ["기상 상황에 관한 정기 보고 자료", "비상 상황에 대비한 훈련", "승객에게 적용할 가격 계획", "승선 과정에서 쓰는 신호", "공동 부두의 안전 정보"], answer: 2, explanation: "두 회사는 안전 관련 정보와 절차를 공유했지만 가격 계획은 교환하지 않았다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Sunlight, Knowledge, and the Winter Tomato",
+        passage: `<p>The amount of winter sunlight reaching Greenhill Farm had not changed in generations. What changed was the farmers’ ability to use it. Earlier growers planted only after the last frost. Their grandchildren tested soil temperatures, selected seeds suited to cool conditions, and designed low glass covers that stored daytime heat. Later, they learned which crops could follow one another without exhausting the soil. Each improvement was a piece of recorded knowledge passed to the next season. The farm did not create more sunlight, yet it turned a larger share of the available energy into food. Its rising harvest was therefore not simply a gift of favorable weather; it was the result of increasingly precise knowledge about how to capture and direct a constant natural resource.</p>`,
+        vocab: [["frost", "서리"], ["exhaust the soil", "토양을 고갈시키다"], ["precise", "정교한"]],
+        questions: [
+          { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["농업 생산량은 계절마다 새롭게 들어오는 햇빛의 양에 의해서만 결정된다.", "자연 에너지를 활용하는 지식의 축적이 식량 생산을 늘릴 수 있다.", "추운 지역에서는 전통적인 파종 시기를 반드시 유지해야 한다.", "토양을 보호하려면 한 종류의 작물만 계속 재배하는 것이 좋다.", "새로운 농업 기술은 이전 세대의 경험과 분리해 평가해야 한다."], answer: 1, explanation: "햇빛의 양은 일정했지만 종자 선택, 온도 측정, 덮개, 윤작 지식이 축적되면서 더 많은 에너지를 식량으로 바꾸었다." },
+          { prompt: "Greenhill Farm의 수확량이 증가한 직접적 배경으로 언급되지 않은 것은?", options: ["파종 시기를 판단하기 위해 토양 온도를 자세히 측정했다.", "추위에 맞는 종자를 선택했다.", "낮의 열을 저장하는 덮개를 사용했다.", "작물을 심는 순서를 연구했다.", "농장에 도달하는 겨울 햇빛이 크게 늘었다."], answer: 4, explanation: "겨울 햇빛의 양은 여러 세대 동안 변하지 않았다고 명시되어 있다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "The Block Without a Reporter",
+        passage: `<p>When the neighborhood newspaper closed, council decisions and road repairs often passed without public notice. A group of residents created a shared news page using free digital tools. One member attended local meetings, another checked public records, and others photographed changes in the streets. Before publishing a claim, two volunteers had to confirm its source, and corrections remained visible beneath the original post. The page did not turn every resident into a professional journalist. It did, however, give ordinary citizens the means to gather information, question local authority, and distribute news their neighbors needed. Technology shifted part of the power of local reporting to the community, along with the responsibility to verify information carefully.</p>`,
+        vocab: [["public record", "공공 기록"], ["correction", "정정"], ["local authority", "지역 권력 기관"]],
+        questions: [
+          { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["지역 신문이 사라지면 공공기관의 회의도 중단되어야 한다.", "디지털 도구는 시민이 지역 보도와 검증을 담당하게 할 수 있다.", "전문 기자가 없는 뉴스는 출처 확인과 관계없이 공개할 수 있다.", "지역 소식은 중앙 언론사가 일괄적으로 수집하는 것이 바람직하다.", "시민의 사진 자료는 공공 기록보다 항상 신뢰도가 높다고 볼 수 있다."], answer: 1, explanation: "기술이 일반 시민에게 지역 정보를 수집·감시·전달할 수단을 제공하는 동시에 검증 책임도 부여했다." },
+          { prompt: "shared news page의 운영 원칙으로 언급된 것은?", options: ["주장은 두 명의 자원봉사자가 출처를 확인한다.", "잘못된 글은 정정 기록 없이 즉시 삭제한다.", "지역 회의에는 전문 기자만 참석할 수 있다.", "사진이 있으면 공공 기록 확인을 생략한다.", "모든 주민은 기사 한 편을 의무적으로 작성한다."], answer: 0, explanation: "게시 전에 두 명의 자원봉사자가 정보의 출처를 확인하고 정정도 원문 아래에 남겼다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "A Beautiful Guess Is Still a Guess",
+        passage: `<p>Botanist Elena proposed that the purple edges of a mountain plant protected its leaves from intense sunlight. The idea fit several observations and offered an elegant explanation. Still, her team treated it as a hypothesis rather than a conclusion. They grew plants under different light levels and compared purple-edged leaves with green ones. The results showed no meaningful difference in sun damage. Instead of defending the original idea, Elena revised it and began testing whether the color discouraged insects. Intuition had helped her ask a productive question, but evidence determined what the team could claim as fact. In science, an appealing explanation earns attention; it does not earn acceptance until testing supports it.</p>`,
+        vocab: [["botanist", "식물학자"], ["hypothesis", "가설"], ["meaningful difference", "유의미한 차이"]],
+        questions: [
+          { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["과학자는 처음 세운 가설을 연구가 끝날 때까지 유지해야 한다.", "직관에서 나온 설명도 검증과 증거를 거쳐야 사실로 인정된다.", "실험 결과가 예상과 다르면 관찰 자료의 사용을 중단해야 한다.", "식물의 색에 관한 연구는 빛보다 곤충을 먼저 조사해야 한다.", "우아한 설명은 반복 실험 없이도 과학적 결론이 될 수 있다."], answer: 1, explanation: "직관은 유용한 가설을 만들었지만 실험 결과에 따라 수정되었으며, 최종 판단 기준은 증거라고 강조한다." },
+          { prompt: "Elena가 첫 가설을 수정한 이유는?", options: ["강한 빛에서 보라색 가장자리를 가진 식물이 전혀 자라지 못했기 때문에", "보라색 잎과 녹색 잎의 햇빛 손상 차이가 뚜렷하지 않았기 때문에", "곤충이 모든 보라색 잎을 먹어 치웠기 때문에", "연구팀이 식물의 색을 측정하지 못했기 때문에", "산악 지역의 햇빛이 예상보다 약했기 때문에"], answer: 1, explanation: "서로 다른 잎의 햇빛 손상에서 유의미한 차이가 나타나지 않아 다른 설명을 검토했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "2점", title: "The Empty Seat at Lunch",
+        passage: `<p>On her first day at a new school, Sora felt her stomach tighten as lunchtime approached. She worried about where to sit and whether her questions would sound awkward. Entering the cafeteria, she noticed another student standing alone with a tray, scanning the crowded tables in the same uncertain way. Sora recognized the expression immediately. Instead of hiding at an empty corner, she walked over and asked whether they should look for seats together. The question was simple, but both students relaxed. Sora’s anxiety had pointed out what a stranger might need because she needed it too. By turning her attention outward, she changed private discomfort into an opportunity for empathy and connection.</p>`,
+        vocab: [["tighten", "긴장으로 조여 오다"], ["scan", "훑어보다"], ["discomfort", "불편함"]],
+        questions: [
+          { prompt: "다음 글의 요지로 가장 적절한 것은?", options: ["낯선 환경에서 생기는 불안은 다른 사람과 어울리지 않을 때에만 저절로 사라진다.", "자신의 불안을 타인의 처지를 이해하고 연결하는 데 활용할 수 있다.", "새로운 친구를 사귀려면 불편한 감정을 드러내지 않는 것이 좋다.", "학교생활에 적응하려면 먼저 많은 사람의 관심을 끌어야 한다.", "사회적 긴장은 익숙한 장소에서도 같은 정도로 나타나기 마련이다."], answer: 1, explanation: "Sora는 자신의 불안과 같은 표정을 한 학생을 알아보고 먼저 손을 내밀어 불편함을 공감과 연결로 바꾸었다." },
+          { prompt: "Sora가 다른 학생에게 말을 건 계기는?", options: ["담임 교사가 두 사람에게 같은 점심 자리를 미리 지정해 주었다.", "다른 학생도 자리를 찾으며 불안해 보였다.", "빈 식탁이 하나도 남아 있지 않았다.", "친구가 먼저 함께 앉자고 요청했다.", "점심시간이 곧 끝난다는 안내가 나왔다."], answer: 1, explanation: "상대가 붐비는 식탁을 불확실한 표정으로 살피는 모습에서 자신의 불안과 같은 감정을 알아보았다." }
+        ]
+      }
     ]
   },
   "05": {
-    level: "3점", title: "Make Uncertainty Visible",
-    passage: `<p>Public institutions often fear that admitting uncertainty will weaken trust. As a result, reports may present a single number even when the available data support a range of outcomes. This apparent confidence can be costly. When later evidence changes the number, citizens may conclude that experts were careless or dishonest. Agencies should instead publish the assumptions behind their estimates and show how the result changes under different conditions. People do not need a promise that every forecast will be correct. They need a clear account of what is known, what remains uncertain, and what evidence would justify a new decision.</p>`,
-    vocab: [["apparent", "겉으로 보이는"], ["assumption", "가정"], ["justify", "정당화하다"]],
+    level: "3점", title: "The Literature Between the Panels",
+    passage: `<p>A literature course may analyze a novel's narrator while ignoring the writers who create stories for games and graphic narratives. That boundary has become difficult to defend. Narrative designers build voices that respond to a reader's choices, and comics writers control meaning through the timing between words and images. Their work asks how language can carry character, tension, and moral conflict under unusual formal limits. Not every popular story deserves academic praise, just as not every printed novel does. Yet the form in which a story appears should not disqualify its writer from serious attention. Literature departments should study such writers when their use of language and structure expands what storytelling can do.</p>`,
+    vocab: [["narrative designer", "서사 설계자"], ["formal limit", "형식적 제약"], ["disqualify", "자격을 박탈하다"]],
     questions: [
-      { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["공공기관은 틀린 예측을 발표한 전문가를 처벌해야 한다.", "시민에게는 최종 수치만 간단히 제시해야 한다.", "기관은 추정의 가정과 불확실성까지 투명하게 밝혀야 한다.", "과학적 예측은 정책 결정에서 제외해야 한다.", "신뢰를 유지하려면 기존 수치를 절대 수정하지 말아야 한다."], answer: 2, explanation: "단일 수치로 확실한 척하기보다 가정, 범위, 수정 조건을 공개해야 신뢰를 지킬 수 있다는 주장이다." },
-      { prompt: "단일 수치만 제시할 때 생길 수 있는 문제는?", options: ["자료 수집 비용이 항상 증가한다.", "수치가 바뀌면 시민이 전문가의 정직성을 의심할 수 있다.", "전문가가 서로 다른 가정을 사용할 수 없게 된다.", "시민이 보고서를 너무 오래 읽게 된다.", "정책 결정 속도가 지나치게 빨라진다."], answer: 1, explanation: "후속 증거로 수치가 바뀌면 처음의 과도한 확신이 오히려 불신을 만든다고 설명한다." }
+      { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["문학 교육은 종이에 인쇄되어 출판된 장편 소설만을 분석 대상으로 한정해야 한다.", "인기 있는 이야기는 작품성 검토 없이 문학으로 인정해야 한다.", "새로운 매체의 작가도 언어와 서사의 성취에 따라 연구해야 한다.", "게임의 선택 구조는 인물과 갈등을 표현하는 데 적합하지 않다.", "만화의 의미는 글보다 그림을 만든 사람에게만 의존한다."], answer: 2, explanation: "매체의 형태만으로 작가를 배제하지 말고, 언어와 구조를 통해 이야기의 가능성을 넓혔는지에 따라 진지하게 연구하자는 주장이다." },
+      { prompt: "윗글에서 새로운 서사 형식의 특징으로 언급된 것은?", options: ["독자의 선택에 따라 달라지는 목소리를 설계할 수 있다.", "대중의 인기를 얻은 모든 작품이 곧바로 학문적 찬사를 받을 수 있다.", "인쇄 소설보다 도덕적 갈등을 더 쉽게 제거할 수 있다.", "글과 이미지 사이의 시간 조절은 의미와 무관하다.", "형식적 제약이 없어 작가가 언어를 사용할 필요가 없다."], answer: 0, explanation: "서사 설계자는 독자의 선택에 반응하는 목소리를 만들고, 만화 작가는 글과 이미지 사이의 타이밍으로 의미를 조절한다고 설명한다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Shrink the Blackout",
+        passage: `<p>When a storm cut power across the city, the manager of a small care home felt responsible for everything at once: medical devices, meals, elevators, and worried families. Repeating the size of the crisis did not help her staff act. She drew four columns on a board—power, water, food, and communication—and assigned one immediate task under each. A nurse checked battery life, the cook counted meals that required no heating, and an assistant called families with a single verified update. The citywide outage remained serious, but the team could now see what was within reach. Leaders facing a large emergency should divide it into concrete, controllable problems. A smaller frame does not deny the crisis; it creates the first useful place to act.</p>`,
+        vocab: [["care home", "요양 시설"], ["within reach", "통제·달성 가능한"], ["concrete", "구체적인"]],
+        questions: [
+          { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["위기 상황에서는 전체 피해 규모를 반복해서 알리는 것이 우선이다.", "대규모 문제를 통제 가능한 작은 과제로 나누어 대응해야 한다.", "비상시에는 관리자가 모든 실무를 혼자 처리하는 편이 안전하다.", "도시 기반 시설이 복구될 때까지 현장의 판단을 미루어야 한다.", "문제의 일부만 다루면 위기의 심각성을 반드시 부정하게 된다."], answer: 1, explanation: "거대한 정전 자체만 바라볼 때는 행동하기 어려웠지만, 전력·물·식량·소통으로 나누자 즉시 수행할 일이 보였다는 사례를 통해 주장을 뒷받침한다." },
+          { prompt: "관리자가 board를 사용한 결과로 가장 적절한 것은?", options: ["직원들이 직접 도시 전체의 전력 공급 체계를 즉시 복구했다.", "각자가 당장 확인할 수 있는 일을 맡아 행동했다.", "가족에게 확인되지 않은 복구 시간을 전달했다.", "가열이 필요한 식사만 우선 제공하기로 했다.", "시설의 모든 의료 기기를 새것으로 교체했다."], answer: 1, explanation: "배터리 확인, 비가열 식사 수량 파악, 검증된 소식 전달처럼 각 영역의 구체적이고 실행 가능한 업무가 배정되었다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "Before You Share the Wellness Chart",
+        passage: `<p>A colorful chart claiming that one spice prevents six diseases can travel through a family chat in minutes. Its polished design, however, says nothing about the quality of its evidence. Before changing a diet or forwarding health advice, readers should trace the claim to a reliable source. Public health agencies, university research centers, and licensed medical organizations normally identify the studies they use, state important limits, and revise guidance when stronger evidence appears. A celebrity's confidence or a large number of shares cannot perform those functions. Nutrition decisions affect the body over time, so convenience should not replace verification. Begin with institutions whose methods and evidence can be examined, and treat unsupported online claims as questions rather than instructions.</p>`,
+        vocab: [["trace A to B", "A의 출처를 B까지 추적하다"], ["licensed", "공인 자격을 갖춘"], ["unsupported", "근거가 뒷받침되지 않은"]],
+        questions: [
+          { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["건강 정보는 온라인에서 반복해서 공유된 횟수가 많을수록 더 믿을 만하다고 보아야 한다.", "식이 조언은 검증 가능한 근거를 제시하는 기관에서 우선 확인해야 한다.", "유명인이 소개한 영양법은 연구의 한계를 따로 살필 필요가 없다.", "공공기관의 지침은 새로운 연구가 나와도 수정하지 않는 편이 낫다.", "온라인 건강 정보는 디자인이 화려하면 전문 자료로 인정할 수 있다."], answer: 1, explanation: "몸에 영향을 주는 영양 결정을 내리기 전에 연구 근거와 한계를 공개하는 공공·대학·의료 기관의 자료를 우선 확인하라고 주장한다." },
+          { prompt: "신뢰할 만한 기관의 특징으로 언급되지 않은 것은?", options: ["활용한 연구를 식별한다.", "중요한 한계를 밝힌다.", "더 강한 증거에 따라 지침을 고친다.", "검토 가능한 방법과 근거를 제시한다.", "유명인의 확신을 증거보다 우선한다."], answer: 4, explanation: "유명인의 자신감과 공유 횟수는 근거 제시, 한계 설명, 지침 수정의 기능을 대신할 수 없다고 명시한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "2점", title: "The Apron on the Manager",
+        passage: `<p>During the café's busiest hour, a new manager stood by the register and repeatedly told the staff that customers came first. Then the dishwasher stopped, clean cups ran out, and orders began to wait. Instead of calling another meeting, the manager tied on an apron, cleared a sink, and washed cups beside a trainee. She still watched the whole room and reassigned tasks when necessary, but her actions made the priority visible. The next day, employees helped one another before being asked because they had seen that urgent, ordinary work was not beneath the leader. A servant leader should be willing to enter important work, especially when the team is under pressure. Participation turns a stated value into a standard others can follow.</p>`,
+        vocab: [["reassign", "재배정하다"], ["beneath", "체면에 맞지 않는"], ["servant leader", "섬김형 리더"]],
+        questions: [
+          { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["관리자는 아무리 현장이 바쁘더라도 실무에 참여하지 않고 지시만 분명히 전달해야 한다.", "팀이 바쁠수록 리더는 중요한 실무에 참여해 기준을 보여야 한다.", "직원이 스스로 움직이게 하려면 업무 우선순위를 숨겨야 한다.", "리더가 사소한 일을 맡으면 전체 상황을 관찰할 수 없게 된다.", "섬김형 리더십은 구성원의 역할을 매일 바꾸는 데서 시작된다."], answer: 1, explanation: "말로 고객 우선을 강조하는 데 그치지 않고 직접 설거지를 도우며 가치의 기준을 행동으로 보여 준 사례가 핵심이다." },
+          { prompt: "직원들이 다음 날 보인 변화는?", options: ["관리자의 요청을 기다리지 않고 서로 도왔다.", "혼잡한 영업 시간에 모든 주문 접수 업무를 잠시 중단했다.", "현장 업무는 관리자의 책임이라고 판단했다.", "고객보다 내부 회의를 먼저 열기로 했다.", "각자 맡은 일 외에는 관여하지 않았다."], answer: 0, explanation: "리더가 긴급한 평범한 일을 직접 하는 모습을 본 뒤 직원들은 지시를 받기 전부터 서로 돕기 시작했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "Teach the Body to Come Down",
+        passage: `<p>Athletes often practice explosive effort but assume that calm breathing will appear automatically when a contest ends. It may not. After repeated sprints, the body can remain in a high-alert state even while the athlete is sitting still. Coaches should therefore teach recovery breathing away from competition, when there is time to notice and adjust the pattern. An athlete might lengthen each exhalation, relax the shoulders, and observe how quickly the pulse settles. Practiced regularly, the routine becomes available after a mistake, during a timeout, or before sleep. Slow breathing is not a substitute for training intensity. It is a separate recovery skill, and athletes should rehearse it under calm conditions so that they can use it when pressure is high.</p>`,
+        vocab: [["explosive effort", "폭발적인 노력"], ["exhalation", "날숨"], ["settle", "진정되다"]],
+        questions: [
+          { prompt: "글쓴이의 주장으로 가장 적절한 것은?", options: ["선수는 경기에서 긴장이 최고조에 달한 순간에만 호흡을 조절하는 연습을 해야 한다.", "느린 호흡은 고강도 체력 훈련을 완전히 대신할 수 있다.", "회복 호흡은 평온한 상황에서 별도의 기술로 반복 연습해야 한다.", "운동이 끝나면 신체의 각성 상태는 언제나 즉시 사라진다.", "호흡 훈련에서는 날숨보다 어깨의 힘을 유지하는 것이 중요하다."], answer: 2, explanation: "압박 상황에서 회복 호흡을 사용할 수 있도록, 여유가 있는 평온한 조건에서 날숨과 이완을 관찰하며 반복 연습해야 한다는 주장이다." },
+          { prompt: "회복 호흡 연습의 방법으로 언급된 것은?", options: ["날숨을 더 길게 하고 어깨의 힘을 푼다.", "맥박이 빨라지도록 숨을 짧게 반복한다.", "경기 직후에만 처음으로 호흡을 조절한다.", "잠들기 전에는 회복 루틴을 사용하지 않는다.", "실수한 뒤에는 고강도 달리기로 긴장을 낮춘다."], answer: 0, explanation: "날숨을 길게 하고 어깨를 이완한 뒤 맥박이 얼마나 빨리 안정되는지 살피는 방법을 제시한다." }
+        ]
+      }
     ]
   },
   "06": {
-    level: "3점", title: "Borrowed Attention",
-    passage: `<p>Attention in a group is not merely an individual resource. It can be borrowed. When one student points out a faint pattern in a graph, others begin to notice it too. When a colleague asks a precise question, the whole team temporarily sees the problem through that question. This is why productive collaboration does more than divide labor. It creates shared objects of attention. However, the same mechanism can narrow a group’s view if everyone follows the first confident voice. Teams therefore need members who can focus attention and members who can deliberately redirect it toward what has been ignored.</p>`,
-    vocab: [["faint", "희미한"], ["precise", "정확한"], ["redirect", "다시 향하게 하다"]],
+    level: "3점", title: "The Bus That Was Fast on Paper",
+    passage: `<p>A city promoted its new express shuttle as the fastest route to the university. The ride took only eighteen minutes, compared with twenty-eight on the regular bus. Yet the express arrived once an hour, while the regular bus came every twelve minutes. A student who reached the stop without checking the timetable could wait so long for the express that its ten-minute travel advantage disappeared. Riders value the whole journey, not just the time a vehicle spends moving. For transit to be practically useful, frequency can matter as much as speed: a service that arrives often reduces uncertain waiting and lets passengers leave when they actually need to. The fastest vehicle is not always part of the fastest trip.</p>`,
+    vocab: [["promote A as B", "A를 B라고 홍보하다"], ["frequency", "운행 빈도"], ["uncertain", "불확실한"]],
     questions: [
-      { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["개인의 집중 시간을 측정하는 방법", "협업에서 주의가 공유되고 방향 지어지는 방식", "그래프 읽기 능력과 성적의 관계", "자신감 있는 지도자를 뽑는 기준", "업무 분담을 빠르게 끝내는 기술"], answer: 1, explanation: "집단에서 한 사람의 관찰과 질문이 다른 구성원의 주의를 함께 움직인다는 내용이다." },
-      { prompt: "글에 따르면 집단의 시야가 좁아질 수 있는 경우는?", options: ["역할을 분담할 때", "질문이 구체적일 때", "첫 번째로 자신 있게 말한 사람을 모두가 따를 때", "희미한 패턴을 발견할 때", "무시된 대상을 다시 살필 때"], answer: 2, explanation: "모두가 첫 번째 자신감 있는 목소리를 따라가면 같은 것만 보게 될 수 있다고 경고한다." }
+      { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["도시 대중교통의 요금을 노선별 운행 거리와 시간에 따라 정하는 기준", "대중교통의 실용성을 좌우하는 운행 빈도의 중요성", "대학 주변에서 버스 속도를 낮추어야 하는 이유", "승객이 모든 시간표를 미리 외워야 하는 필요성", "급행버스와 일반버스의 좌석 수를 같게 하는 방법"], answer: 1, explanation: "차량의 주행 시간이 짧아도 배차 간격이 길면 기다림 때문에 전체 여정이 느려질 수 있으므로 빈도가 실용성에 중요하다는 내용이다." },
+      { prompt: "급행 셔틀의 시간상 이점이 사라질 수 있는 이유는?", options: ["일반버스보다 반드시 더 많은 정류장에 멈추어 승객을 태우기 때문에", "한 시간 간격이라 정류장에서 오래 기다릴 수 있기 때문에", "대학까지 가는 도로가 매일 폐쇄되기 때문에", "학생이 급행 요금을 현금으로만 내야 하기 때문에", "차량이 움직이는 데 일반버스보다 오래 걸리기 때문에"], answer: 1, explanation: "급행은 주행 자체는 10분 빠르지만 한 시간에 한 번만 오므로, 시간표를 맞추지 못하면 대기 시간이 그 이점을 없앨 수 있다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Who Gets a Voice on Harbor Island",
+        passage: `<p>Harbor Island's council asked residents to vote on whether an empty pier should become a public park. Only property owners, however, received ballots. That rule excluded renters who had lived on the island for decades, workers in council housing, and young adults sharing family homes. These residents used the pier area, paid local taxes through rent and purchases, and would live with the result. A democracy is active when the people affected by a decision can help shape it, not merely when officials hold a vote. Formal ownership may be simple to verify, but convenience is a poor reason to silence permanent members of a community. The council should define participation broadly enough to include residents with an enduring stake in the island's common life.</p>`,
+        vocab: [["pier", "부두"], ["exclude", "배제하다"], ["enduring stake", "지속적인 이해관계"]],
+        questions: [
+          { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["섬 지역의 모든 부동산 가격을 공정하게 조사하고 평가하는 행정 절차", "공동체 의사 결정에 영구 거주자를 폭넓게 참여시킬 필요성", "공공 부두를 상업 시설로 바꿀 때 생기는 경제 효과", "지방세를 주택 소유자에게만 부과해야 하는 근거", "온라인 투표에서 소유권을 신속하게 확인하는 기술"], answer: 1, explanation: "결정의 영향을 받으며 공동체에 지속적으로 참여하는 거주자를 재산 소유 여부만으로 배제해서는 안 된다는 내용이다." },
+          { prompt: "property owners만 투표하게 한 규칙의 문제로 가장 적절한 것은?", options: ["부두를 거의 이용하지 않는 외부 관광객까지 투표권자로 모두 포함했다.", "오랫동안 거주한 세입자와 공공주택 주민을 배제했다.", "투표 결과가 나오기 전에 공원을 완공했다.", "재산 소유 여부를 확인할 방법이 전혀 없었다.", "모든 청년에게 두 장의 투표용지를 보냈다."], answer: 1, explanation: "수십 년 거주한 세입자, 공공주택 거주 노동자, 가족과 사는 청년처럼 결정의 영향을 받는 주민들이 투표에서 제외되었다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "A Chair in Two Rooms",
+        passage: `<p>In a warehouse, an old wooden chair sat beside broken shelves and packing boxes. Visitors called it worn-out furniture and asked why it had not been discarded. Months later, the chair appeared alone under soft light in a museum gallery. A label explained that a dockworker had built it from shipping crates during a long strike. People now studied its uneven joints as evidence of limited tools and careful reuse. Nothing in the wood had changed. Its new location connected the object to a history and invited a different kind of attention. We do not interpret objects from physical features alone; the setting supplies expectations that make some features visible and others easy to miss.</p>`,
+        vocab: [["worn-out", "낡아 해진"], ["joint", "이음매"], ["supply", "제공하다"]],
+        questions: [
+          { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["낡은 목재 가구가 거래되는 시장 가격을 정확하게 계산하는 방법", "전시 장소와 맥락이 사물의 해석에 미치는 영향", "목재 이음매를 기계로 정교하게 만드는 기술", "박물관 조명이 오래된 물건을 손상시키는 과정", "창고의 포장 상자를 효율적으로 분류할 필요성"], answer: 1, explanation: "같은 의자가 창고에서는 폐기물처럼, 박물관에서는 역사적 증거처럼 보이는 사례로 장소와 맥락이 해석을 바꾼다는 점을 보여 준다." },
+          { prompt: "박물관에서 사람들이 chair의 uneven joints에 주목한 이유는?", options: ["나무의 물리적 성질과 표면 상태가 전시 도중 완전히 달라졌기 때문에", "설명이 의자를 파업 당시의 제작 상황과 연결했기 때문에", "창고에 있을 때보다 이음매의 수가 새로 늘었기 때문에", "의자가 유명 디자이너의 최신 작품으로 소개되었기 때문에", "관람객이 포장 상자를 직접 조립해야 했기 때문에"], answer: 1, explanation: "라벨이 제한된 도구와 재사용이라는 역사적 맥락을 제공해 이전에는 흠처럼 보였던 이음매를 증거로 읽게 했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "Beyond the Filing Cabinet",
+        passage: `<p>For years, a research team described memory as a filing cabinet inside the brain. The metaphor helped them ask how information was stored and retrieved, but it also directed attention away from other questions. A familiar song can return through bodily rhythm; a family story changes as people retell it together; fear can make one detail vivid while hiding another. These examples do not fit neatly into a model of fixed files. No single metaphor has to be discarded completely, yet each reveals some features and conceals others. Research on the mind becomes richer when computer-like models are placed beside perspectives that examine the body, emotion, culture, and narrative. Changing the model changes the questions we are able to ask.</p>`,
+        vocab: [["retrieve", "인출하다"], ["fit neatly into", "~에 꼭 들어맞다"], ["conceal", "가리다"]],
+        questions: [
+          { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["기억을 오랫동안 정확히 보존하기 위한 전자 파일 분류와 정리 방식", "마음을 이해할 때 여러 모형과 관점을 함께 사용할 필요성", "노래의 리듬이 컴퓨터 저장 장치를 개선하는 원리", "가족 이야기를 변형 없이 기록해야 하는 이유", "감정이 모든 기억을 항상 더 정확하게 만드는 과정"], answer: 1, explanation: "파일이나 컴퓨터 비유가 일부 질문에는 유용하지만 몸·감정·문화·서사 관점을 함께 둘 때 마음을 더 풍부하게 연구할 수 있다는 내용이다." },
+          { prompt: "filing cabinet metaphor의 한계로 가장 적절한 것은?", options: ["정보의 저장과 인출에 관한 연구 질문을 처음부터 전혀 만들지 못한다.", "몸과 사회적 이야기 속에서 나타나는 기억을 놓치기 쉽다.", "모든 문화에서 동일한 가족 이야기를 만들어 낸다.", "연구자가 감정을 실제 파일로 보관하게 만든다.", "노래를 들을 때 기억이 생기는 현상을 완전히 설명한다."], answer: 1, explanation: "저장과 인출에는 유용하지만 몸의 리듬, 공동의 재서술, 감정이 기억에 미치는 측면을 충분히 드러내지 못한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "The Reader Builds the Garden",
+        passage: `<p>A story says that Mara entered an abandoned garden after rain. It does not list every leaf, wall, and shadow. One reader imagines the wet stone path from a childhood home; another gives the garden the dark trees of a park visited last winter. The printed words guide both readers, but neither receives a finished picture. Memory, expectation, and sensory imagination complete what the page leaves open. This is part of literature's creative pleasure. A reader is not merely collecting information placed in sentences but actively constructing a world under their direction. The text sets limits—Mara cannot suddenly be in a desert—yet within those limits, the act of reading produces images and feelings that did not exist on the page alone.</p>`,
+        vocab: [["abandoned", "버려진"], ["sensory", "감각의"], ["set limits", "한계를 정하다"]],
+        questions: [
+          { prompt: "다음 글의 주제로 가장 적절한 것은?", options: ["문학 작품에 등장하는 모든 배경과 사물을 자세한 그림으로 제시해야 하는 이유", "독자가 기억과 상상으로 텍스트의 세계를 능동적으로 구성하는 과정", "작가의 어린 시절이 모든 독자의 해석을 동일하게 만드는 방식", "문학 정보를 빠짐없이 문장에 기록하는 기술의 중요성", "정원의 실제 식물과 소설 속 식물을 구별하는 방법"], answer: 1, explanation: "문장은 방향과 한계를 주지만 독자가 자신의 기억과 감각적 상상으로 빈 부분을 채워 작품 세계를 구성한다는 내용이다." },
+          { prompt: "글에 따르면 text가 하는 역할로 가장 적절한 것은?", options: ["모든 독자가 머릿속에서 완전히 동일한 세부 장면을 떠올리게 한다.", "상상에 방향과 한계를 주되 완성된 그림은 주지 않는다.", "독자의 과거 경험이 떠오르지 않도록 막는다.", "페이지 밖에서 생기는 감정과 이미지를 제거한다.", "배경의 모든 잎과 그림자를 자세히 나열한다."], answer: 1, explanation: "텍스트는 Mara가 사막에 있을 수 없다는 식의 한계를 정하고 독자를 안내하지만, 장면의 세부는 독자의 기억과 상상이 완성한다." }
+        ]
+      }
     ]
   },
   "07": {
