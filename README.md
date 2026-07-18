@@ -28,6 +28,9 @@
 - `scripts/validate-grammar-page.mjs`: 영문법 포인트·문항·정답 분포·강별 연결 검증
 - `scripts/generate-reading-listening-lessons.mjs`: 독해연습·듣기 강별 페이지 생성 스크립트
 - `scripts/generate-sitemap.mjs`: 공개 HTML canonical 기준 사이트맵 생성 스크립트
+- `scripts/generate-rss.mjs`: 최신 영문법 상세 페이지의 본문 전체를 담은 RSS 2.0 생성 스크립트
+- `scripts/validate-feeds.mjs`: 사이트맵 URL·RSS 본문·동일 도메인·용량 제한 검증
+- `sitemap.xml`, `rss.xml`: 검색엔진 제출용 사이트맵과 RSS 피드
 - `about.html`, `privacy.html`, `copyright.html`, `contact.html`: 운영 필수 페이지
 - `assets/`: 공통 디자인과 동작
 
