@@ -5,7 +5,7 @@
 ## 구성
 
 - `index.html`: 메인 페이지
-- `2027-suneung-english.html`: 수능특강 영어 01~18강 제시문 94개 분석과 자체 제작 변형문제 221문항
+- `2027-suneung-english.html`: 수능특강 영어 01~30강 제시문 144개 분석, Test 1~3과 자체 제작 변형문제 318문항
 - `2027-suneung-reading.html`: 영어독해연습 9주 과정
 - `2027-suneung-listening.html`: 영어듣기 26강 목차와 복습법
 - `study-plan.html`: 세 교재 통합 9주 계획
