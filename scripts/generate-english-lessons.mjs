@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { englishPractice } from "./english-practice-data.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const output = join(root, "lessons");
@@ -347,16 +348,37 @@ const escape = (value) => String(value)
 
 const filename = (lesson) => `2027-suneung-english-${lesson.no.toLowerCase()}-${lesson.slug}.html`;
 
+const renderTable = (table) => table ? `<div class="exam-table-wrap"><table class="exam-data-table"><caption>${escape(table.caption)}</caption><thead><tr>${table.headers.map((header) => `<th>${escape(header)}</th>`).join("")}</tr></thead><tbody>${table.rows.map((row) => `<tr>${row.map((cell, index) => `<${index === 0 ? "th" : "td"}>${escape(cell)}</${index === 0 ? "th" : "td"}>`).join("")}</tr>`).join("")}</tbody></table></div>` : "";
+
+const renderVocab = (vocab) => `<div class="vocab-strip" aria-label="핵심 어휘">${vocab.map(([word, meaning]) => `<span><strong>${escape(word)}</strong>${escape(meaning)}</span>`).join("")}</div>`;
+
+const renderQuestions = (lesson, questions) => questions.map((question, questionIndex) => {
+  const name = `question-${lesson.no.toLowerCase()}-${questionIndex + 1}`;
+  const options = question.options.map((option, optionIndex) => `<label class="practice-option"><input type="radio" name="${name}" value="${optionIndex}"><span class="option-number">${optionIndex + 1}</span><span>${escape(option)}</span></label>`).join("");
+  const answerText = question.options[question.answer];
+  return `<section class="practice-question" data-practice-question data-correct="${question.answer}">
+        <div class="question-heading"><span>문제 ${questionIndex + 1}</span><h3>${question.prompt}</h3></div>
+        <div class="practice-options">${options}</div>
+        <div class="question-actions"><button class="button primary small" type="button" data-check-answer>정답 확인</button><p class="answer-result" data-answer-result aria-live="polite">선택지를 고른 뒤 정답을 확인하세요.</p></div>
+        <div class="answer-panel" data-answer-panel hidden><strong>정답 ${question.answer + 1}번 · ${escape(answerText)}</strong><p>${escape(question.explanation)}</p></div>
+      </section>`;
+}).join("");
+
 for (const [index, lesson] of lessons.entries()) {
   const previous = lessons[index - 1];
   const next = lessons[index + 1];
-  const pageTitle = `2027 수능특강 영어 ${lesson.no} ${lesson.title} 학습법`;
-  const description = `${pageTitle}: ${lesson.focus} 풀이 순서, 오답 패턴, 복습 기록표를 제공합니다.`;
+  const practice = englishPractice[lesson.no];
+  if (!practice) throw new Error(`Missing practice data for lesson ${lesson.no}`);
+  const pageTitle = `2027 수능특강 영어 ${lesson.no} ${lesson.title} 변형문제`;
+  const description = `${pageTitle}: 직접 제작한 영어 지문과 ${practice.questions.length}개 객관식 문항, 정답 해설, 핵심 어휘를 제공합니다.`;
   const canonical = `https://englishexamlab.kr/lessons/${filename(lesson)}`;
   const stepCards = lesson.steps.map((step, i) => `<article class="route-step"><span class="step-no">${i + 1}</span><h3>${i + 1}단계</h3><p>${escape(step)}</p></article>`).join("");
   const errorRows = lesson.errors.map((error, i) => `<tr><td>${i + 1}</td><td>${escape(error)}</td><td>${escape(lesson.steps[Math.min(i, lesson.steps.length - 1)])}</td></tr>`).join("");
   const recordRows = lesson.record.map((item, i) => `<tr><td>${i + 1}</td><td>${escape(item)}</td><td class="write-space">교재 지문을 공부한 뒤 직접 작성</td></tr>`).join("");
   const checkItems = lesson.checks.map((item) => `<li>${escape(item)}</li>`).join("");
+  const practiceQuestions = renderQuestions(lesson, practice.questions);
+  const dataTable = renderTable(practice.table);
+  const insertSentence = practice.insert ? `<div class="insert-sentence"><span>주어진 문장</span><p>${escape(practice.insert)}</p></div>` : "";
   const prevLink = previous ? `<a class="button secondary small" href="${filename(previous)}">← ${previous.no} ${escape(previous.title)}</a>` : `<a class="button secondary small" href="../2027-suneung-english.html">← 전체 목차</a>`;
   const nextLink = next ? `<a class="button primary small" href="${filename(next)}">${next.no} ${escape(next.title)} →</a>` : `<a class="button primary small" href="../2027-suneung-english.html">전체 목차로 →</a>`;
 
@@ -382,7 +404,7 @@ for (const [index, lesson] of lessons.entries()) {
     url: canonical,
     inLanguage: "ko-KR",
     educationalLevel: "고등학교·수능",
-    learningResourceType: "학습 가이드",
+    learningResourceType: "연습문제",
     datePublished: "2026-07-18",
     dateModified: "2026-07-18",
     provider: { "@type": "Organization", name: "영어시험연구소", url: "https://englishexamlab.kr/" }
@@ -394,13 +416,15 @@ for (const [index, lesson] of lessons.entries()) {
   <main id="main">
     <section class="page-hero"><div class="container"><div class="breadcrumb"><a href="../index.html">홈</a><span>›</span><a href="../2027-suneung-english.html">2027 수능특강 영어</a><span>›</span><span>${lesson.no} ${escape(lesson.title)}</span></div><div class="page-title"><div><p class="section-kicker">${escape(lesson.part)} · 교재 ${lesson.page}쪽부터</p><h1>${lesson.no}<br>${escape(lesson.title)}</h1><p>${escape(lesson.focus)}</p></div><div class="title-badge"><strong>${lesson.no}</strong><span>${escape(lesson.part)}</span></div></div></div></section>
     <section class="section"><div class="container content-layout"><article class="legal lesson-article">
-      <section class="article-section"><h2>이 강에서 익힐 것</h2><p>${escape(lesson.intro)}</p><div class="lesson-key"><span>핵심 판단식</span><strong>${escape(lesson.key)}</strong></div></section>
-      <section class="article-section"><h2>교재 지문을 푸는 3단계</h2><div class="route-grid">${stepCards}</div></section>
+      <section class="article-section practice-set"><div class="practice-set-head"><div><p class="practice-label">영어시험연구소 제작 · ${escape(practice.level)}</p><h2>EBS 연계형 변형문제</h2><p>교재의 강별 유형과 사고 과정을 반영해 새로 쓴 지문입니다. 먼저 제한 시간 안에 풀고 정답 해설을 확인하세요.</p></div><span class="question-count">${practice.questions.length}문항</span></div>
+        <div class="reading-passage"><div class="passage-heading"><span>PASSAGE</span><h3>${escape(practice.title)}</h3></div>${insertSentence}${practice.passage}${dataTable}</div>
+        ${renderVocab(practice.vocab)}
+        <div class="practice-question-list">${practiceQuestions}</div>
+      </section>
+      <section class="article-section"><h2>풀이 후 핵심 공략</h2><p>${escape(lesson.intro)}</p><div class="lesson-key"><span>핵심 판단식</span><strong>${escape(lesson.key)}</strong></div><div class="route-grid">${stepCards}</div></section>
       <section class="article-section"><h2>자주 나오는 오답 패턴</h2><div class="table-wrap"><table class="study-table"><thead><tr><th>번호</th><th>잘못된 판단</th><th>고칠 행동</th></tr></thead><tbody>${errorRows}</tbody></table></div></section>
-      <section class="article-section"><h2>한 지문 학습 순서</h2><div class="table-wrap"><table class="study-table"><thead><tr><th>시점</th><th>할 일</th><th>완료 기준</th></tr></thead><tbody><tr><td>풀기 전</td><td>발문을 읽고 ${escape(lesson.focus)}</td><td>찾아야 할 정보를 질문 한 문장으로 말함</td></tr><tr><td>푸는 중</td><td>${escape(lesson.steps.join(" → "))}</td><td>선택지보다 지문 근거를 먼저 표시함</td></tr><tr><td>채점 후</td><td>정답 근거와 내가 고른 오답의 차이를 비교</td><td>다음 문제에서 할 행동을 한 문장으로 기록함</td></tr></tbody></table></div></section>
-      <section class="article-section"><h2>복습 기록표</h2><p>교재의 지문과 문항을 직접 보면서 아래 세 항목을 작성하세요. 지문 전체를 옮기지 않고 판단에 필요한 말만 짧게 적는 것이 좋습니다.</p><div class="table-wrap"><table class="study-table"><thead><tr><th>항목</th><th>확인 질문</th><th>나의 기록</th></tr></thead><tbody>${recordRows}</tbody></table></div></section>
       <section class="article-section"><h2>학습 완료 체크</h2><ul class="check-list">${checkItems}</ul><div class="note-box"><strong>다시 볼 기준</strong><p>세 항목 중 하나라도 설명하지 못하거나 정답 근거를 지문에서 찾지 못했다면, 다음 날 같은 지문을 다시 풀지 말고 기록표의 빈칸만 먼저 복원하세요.</p></div></section>
-      <section class="article-section"><h2>자료 이용 안내</h2><p>이 페이지는 2027학년도 EBS 수능특강 영어의 강 구성과 유형을 기준으로 영어시험연구소가 새로 작성한 학습 가이드입니다. 교재 지문·문항·정답을 복제하지 않으며, 공식 교재를 준비한 뒤 함께 사용하는 보조 자료입니다.</p></section>
+      <section class="article-section"><h2>자료 이용 안내</h2><p>이 페이지의 영어 지문, 문항, 선택지와 해설은 영어시험연구소가 직접 작성했습니다. 2027학년도 EBS 수능특강 영어의 강별 유형에 연계한 비공식 학습 자료이며, EBS 교재의 원문·문항·정답을 복제하지 않습니다.</p></section>
       <nav class="lesson-nav" aria-label="이전·다음 학습 페이지">${prevLink}${nextLink}</nav>
     </article><aside class="sidebar"><div class="side-card"><h2>교재 위치</h2><ul><li>${escape(lesson.part)}</li><li>${lesson.no} ${escape(lesson.title)}</li><li>${lesson.page}쪽부터</li></ul></div><div class="side-card"><h2>바로가기</h2><p><a href="../2027-suneung-english.html">30강 전체 목차 →</a></p><p><a href="../study-plan.html">9주 학습 계획 →</a></p><p><a href="../suneung-english-wrong-answer-note.html">오답 노트 작성법 →</a></p></div></aside></div></section>
   </main>
