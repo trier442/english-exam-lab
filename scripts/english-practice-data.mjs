@@ -4,6 +4,10 @@
 import { englishPractice1012 } from "./english-practice-data-10-12.mjs";
 import { englishPractice1315 } from "./english-practice-data-13-15.mjs";
 import { englishPractice1618 } from "./english-practice-data-16-18.mjs";
+import { englishPractice1920 } from "./english-practice-data-19-20.mjs";
+import { englishPractice2125 } from "./english-practice-data-21-25.mjs";
+import { englishPractice2630 } from "./english-practice-data-26-30.mjs";
+import { englishPracticeTests } from "./english-practice-data-tests.mjs";
 
 export const englishPractice = {
   "01": {
@@ -657,4 +661,8 @@ export const englishPractice = {
       { prompt: "윗글의 제목으로 가장 적절한 것은?", options: ["One Perfect Memory of Every Event", "Why Public Memory Needs More Than One Voice", "The Fastest Way to Summarize History", "How to Remove Conflict from Interviews", "The Organizer as the Only Reliable Witness"], answer: 1, explanation: "단일 목소리보다 다양한 위치의 기억과 불일치를 함께 보존해야 한다는 내용이다." }
     ]
   },
+  ...englishPractice1920,
+  ...englishPractice2125,
+  ...englishPractice2630,
+  ...englishPracticeTests,
 };
