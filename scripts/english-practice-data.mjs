@@ -285,31 +285,149 @@ export const englishPractice = {
     ]
   },
   "07": {
-    level: "3점", title: "Museum Labels and Curiosity",
-    passage: `<p>A museum label can act like a wall or a doorway. A wall-like label delivers a finished interpretation: it tells visitors exactly what an object means and leaves little room for observation. A doorway label offers enough context to begin looking but also raises a question. For example, instead of simply naming the material of an ancient bowl, it might ask why the maker repaired a crack rather than replacing the bowl. Visitors then compare the repair with the rest of the object and build an interpretation from visible evidence. Good labels do not abandon expertise. They use expertise to invite attention rather than to end it.</p>`,
-    vocab: [["interpretation", "해석"], ["ancient", "고대의"], ["visible evidence", "눈에 보이는 증거"]],
+    level: "3점", title: "The Festival That Sold Its Name",
+    passage: `<p>For generations, the Harbor Lantern Festival ended with residents carrying handmade lights to the water while elders told stories about sailors who never returned. When visitor numbers grew, a beverage company offered enough sponsorship to double the festival's size. The town added a concert stage, branded cups, and a giant sign bearing the company's name. Hotels filled, but the storytelling circle was moved behind the stage and shortened to ten minutes. Some organizers welcomed the income; others asked what exactly the larger event was celebrating. Commercial support had not destroyed the festival, yet it had begun to change which parts were most visible. The town now had to decide whether growth would serve the tradition or quietly replace it.</p>`,
+    vocab: [["sponsorship", "후원"], ["bearing", "~을 지닌"], ["tradition", "전통"]],
     questions: [
-      { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["Why Museums Should Remove Every Label", "Labels That Open Doors to Observation", "The Rising Price of Ancient Bowls", "How to Repair Objects Without Experts", "Walls as the Best Museum Display"], answer: 1, explanation: "좋은 설명문은 완성된 해석을 강요하는 벽이 아니라 관찰과 질문을 여는 문이 되어야 한다는 글이다." },
-      { prompt: "doorway label의 특징으로 가장 적절한 것은?", options: ["작품의 가격만 알려 준다.", "관람객의 질문을 차단한다.", "전문 지식을 완전히 배제한다.", "맥락과 질문을 제공해 관찰을 유도한다.", "손상된 작품을 전시에서 제외한다."], answer: 3, explanation: "필요한 맥락을 주되 질문을 남겨 관람객이 보이는 근거로 해석하게 한다." }
+      { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["A Bigger Stage, a Fainter Tradition", "Why Every Festival Needs a Global Sponsor", "The Complete History of Harbor Hotels", "Lantern Making as a Modern Factory Business", "A Concert That Brought Lost Sailors Home"], answer: 0, explanation: "행사의 규모와 수입은 커졌지만 전통 이야기가 가려지면서 상업적 성장과 문화적 본질 사이의 긴장이 생겼다는 제목이 적절하다." },
+      { prompt: "글에서 제기하는 핵심 문제로 가장 적절한 것은?", options: ["기업 후원이 전통의 중심을 약화할 수 있다는 점", "주민들이 손으로 등불을 제작할 기술이 없다는 점", "관광객이 숙박 시설을 전혀 이용하지 않았다는 점", "콘서트가 항구의 안전 규정을 모두 위반했다는 점", "옛이야기가 새로운 음료 제품의 판매를 막았다는 점"], answer: 0, explanation: "후원으로 행사는 커졌지만 이야기 행사가 뒤로 밀려 전통의 핵심이 무엇인지 다시 묻게 되었다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Five Hundred Hours, Five Different Results",
+        passage: `<p>Five students each logged five hundred hours at the violin. Their results were not equal. One repeated familiar songs without correcting mistakes. Another received weekly feedback and rebuilt difficult passages slowly. A third practiced late at night while exhausted, and a fourth divided practice into shorter sessions followed by sleep. The fifth had played rhythmic games since childhood and recognized musical patterns quickly. Time mattered, but it did not act alone. The quality of feedback, the difficulty of the task, prior experience, attention, and recovery changed what each hour produced. A clock can record exposure; it cannot guarantee mastery. Expertise grows from a system of conditions, not from crossing one magical number.</p>`,
+        vocab: [["log", "시간을 기록하다"], ["passage", "악곡의 한 부분"], ["exposure", "접촉·노출 시간"]],
+        questions: [
+          { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["Practice Time Is Not a Magic Number", "Why Violin Students Should Never Sleep", "One Song That Guarantees Musical Mastery", "The Clock as the Best Teacher of Every Skill", "Childhood Games That Replace All Later Practice"], answer: 0, explanation: "같은 연습 시간도 피드백, 난도, 사전 경험, 집중과 회복에 따라 다른 결과를 내므로 시간 수치 하나가 숙련을 보장하지 않는다는 내용이다." },
+          { prompt: "윗글에 따르면 연습의 성과에 영향을 주는 요인으로 언급되지 않은 것은?", options: ["교사가 제공하는 피드백의 질", "과제의 난도", "이전 경험", "연주복의 가격", "집중과 회복"], answer: 3, explanation: "피드백, 과제 난도, 사전 경험, 주의와 회복은 언급되지만 연주복 가격은 나오지 않는다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "The Proposal the Town Could Hear",
+        passage: `<p>A water-filter company proposed a new plant to a town whose old factories had recently closed. Its first presentation emphasized national sales and advanced machinery. Council members showed little interest; the plan sounded profitable for distant investors but irrelevant to local needs. Before returning, the company interviewed residents. It redesigned the proposal to include paid technical training, contracts with nearby repair shops, and a system that would provide emergency drinking water during floods. The machinery had not changed, but the meaning of the project had. By connecting the plant to skills, local business, and public safety, the company spoke to the town's priorities and won approval.</p>`,
+        vocab: [["irrelevant", "관련 없는"], ["contract", "계약"], ["win approval", "승인을 얻다"]],
+        questions: [
+          { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["A Proposal Rebuilt Around Local Priorities", "The Machine That Required No Trained Workers", "Why Town Councils Should Avoid Every Factory", "National Sales Without Any Community Benefit", "A Flood That Closed All Nearby Repair Shops"], answer: 0, explanation: "회사가 지역의 일자리·사업·안전 요구를 이해해 제안의 의미와 구성을 바꾸면서 승인을 얻은 과정이 중심이다." },
+          { prompt: "회사가 두 번째 제안에 추가한 내용이 아닌 것은?", options: ["지역 주민을 대상으로 제공하는 유급 기술 교육", "인근 수리점과의 계약", "홍수 때 비상 식수 제공", "지역 안전과의 연계", "해외 투자자의 독점 운영권"], answer: 4, explanation: "두 번째 제안에는 교육, 지역 업체 계약, 비상 식수 체계가 포함되었지만 해외 투자자의 독점 운영권은 언급되지 않았다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "When the Plaza Looked Finished Too Soon",
+        passage: `<p>An architecture team used a detailed 3D model to design a public plaza. After two days, the screen showed polished stone, exact shadows, and rows of benches. Because the image looked nearly finished, later meetings focused on adjusting colors rather than questioning the layout. Only when the team printed a rough sketch did someone notice that the central steps blocked wheelchair access and that the stage faced the afternoon sun. The polished model had made an early arrangement feel more certain than it was. Detailed tools are valuable, but when detail arrives too soon, it can discourage designers from exploring alternatives that a rough drawing still leaves open.</p>`,
+        vocab: [["layout", "배치"], ["wheelchair access", "휠체어 접근성"], ["discourage", "의욕을 꺾다"]],
+        questions: [
+          { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["The Hidden Cost of a Too-Polished First Design", "How Exact Shadows Solve Every Access Problem", "Why Public Plazas Need More Stone Benches", "A Screen That Made Rough Sketches Impossible", "Color Adjustment as the Only Heart of Modern Architecture"], answer: 0, explanation: "초기부터 완성도 높게 보이는 모델이 배치 재검토를 막아 중요한 문제를 늦게 발견하게 했다는 내용이다." },
+          { prompt: "rough sketch가 팀에 도움을 준 방식은?", options: ["초기 배치를 다시 검토하게 했다.", "돌의 정확한 가격을 자동 계산했다.", "모든 회의를 색상 논의로 제한했다.", "무대가 햇빛을 받지 않도록 즉시 이동했다.", "3D 모델의 세부 정보를 더 빨리 고정했다."], answer: 0, explanation: "거친 스케치는 완성됐다는 인상을 약화해 접근성과 무대 방향 같은 기본 배치를 다시 보게 했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "2점", title: "Drawing Less, Imagining More",
+        passage: `<p>A small animation studio could not afford to draw every movement of a fox running through snow. Instead, the artists showed three sharp poses, a white line crossing a dark background, and a scarf that continued moving after the fox stopped. Viewers supplied the missing motion in their minds. The limited images also allowed the artists to make the forest bend like folded paper and turn the moon into an eye—effects that realistic movement would have made awkward. Financial limits shaped the method, but they did not merely reduce quality. By removing detail, the studio invited imagination and discovered a visual language that a more literal film might never have attempted.</p>`,
+        vocab: [["pose", "자세"], ["supply", "보충하다"], ["literal", "사실적인, 문자 그대로의"]],
+        questions: [
+          { prompt: "다음 글의 제목으로 가장 적절한 것은?", options: ["Less Motion, More Room for Imagination", "The Most Expensive Way to Draw Falling Snow", "Why Viewers Reject Every Missing Movement", "A Realistic Fox That Changed Forest Science", "How Detailed Frames Eliminate Artistic Choice"], answer: 0, explanation: "제한된 움직임과 세부 묘사가 관객의 상상과 현실을 벗어난 표현을 가능하게 했다는 내용이다." },
+          { prompt: "제작 방식이 가져온 결과로 가장 적절한 것은?", options: ["관객이 빠진 동작을 상상하게 했다.", "현실적인 움직임만 사용하게 했다.", "모든 장면의 제작 비용을 높였다.", "숲과 달의 상징적 표현을 제거했다.", "여우의 자세를 한 장면으로만 제한했다."], answer: 0, explanation: "세 자세와 움직이는 목도리 사이의 동작을 관객이 마음속으로 보충했고 비현실적 시각 언어도 가능해졌다." }
+        ]
+      }
     ]
   },
   "08": {
-    level: "2점", title: "How Students Traveled to School",
-    table: { caption: "Percentage of students by travel mode", headers: ["Mode", "2024", "2026"], rows: [["Walk", "28%", "34%"], ["Bicycle", "12%", "18%"], ["Bus", "40%", "31%"], ["Car", "20%", "17%"]] },
-    passage: `<p>The table shows the percentage of students at Greenhill High School who used four travel modes in 2024 and 2026. The school installed safer bicycle parking and opened a walking gate in 2025.</p>`,
-    vocab: [["travel mode", "이동 수단"], ["percentage", "백분율"], ["install", "설치하다"]],
+    level: "2점", title: "How Students Contacted Project Teammates",
+    table: { caption: "Percentage of students by communication mode", headers: ["Mode", "Every Day", "Weekly or Less"], rows: [["Messages", "52%", "21%"], ["Voice Calls", "14%", "39%"], ["Email", "7%", "44%"], ["Video Meetings", "9%", "36%"]] },
+    passage: `<p>The table shows how often students used four communication modes to contact teammates during a semester-long project. Each student could report a different frequency for each mode.</p>`,
+    vocab: [["communication mode", "의사소통 방식"], ["semester-long", "한 학기 동안의"], ["frequency", "빈도"]],
     questions: [
-      { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["Walking increased by six percentage points.", "Bicycle use rose between 2024 and 2026.", "The bus remained the most common mode in 2026.", "Car use decreased by three percentage points.", "More than half of students walked in 2026."], answer: 4, explanation: "2026년 도보 통학 비율은 34%이므로 절반을 넘지 않는다." },
-      { prompt: "2026년에 두 번째로 많이 이용된 이동 수단은?", options: ["Walk", "Bicycle", "Bus", "Car", "Walk and Bicycle equally"], answer: 2, explanation: "2026년에는 Walk 34%, Bus 31%, Bicycle 18%, Car 17% 순이므로 두 번째는 Bus이다." }
+      { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["매일 사용 비율은 메시지가 가장 높다.", "주 1회 이하 사용 비율은 네 방식 중 이메일이 가장 높다.", "음성 통화는 매일보다 주 1회 이하 비율이 높다.", "화상 회의의 매일 사용 비율은 이메일보다 높다.", "주 1회 이하에서 이메일은 두 번째로 높은 방식이다."], answer: 4, explanation: "주 1회 이하 비율은 이메일 44%가 가장 높고 음성 통화 39%가 두 번째다." },
+      { prompt: "매일 사용 비율이 주 1회 이하 사용 비율보다 높은 방식은?", options: ["Messages", "Voice Calls", "Email", "Video Meetings", "Email and Video Meetings"], answer: 0, explanation: "Messages만 매일 52%가 주 1회 이하 21%보다 높다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Student Housing Across Four Campuses",
+        table: { caption: "Student housing by accommodation type", headers: ["Campus", "University Housing", "Private Student Housing", "Other Private Housing"], rows: [["Northport", "24%", "28%", "48%"], ["Eastbridge", "31%", "36%", "33%"], ["Lakeside", "12%", "18%", "70%"], ["Hilltown", "22%", "16%", "62%"]] },
+        passage: `<p>The table compares the housing arrangements of students at four campuses in 2026. Percentages in each row add up to 100%.</p>`,
+        vocab: [["housing arrangement", "주거 형태"], ["add up to", "합계가 ~가 되다"], ["campus", "대학 지역"]],
+        questions: [
+          { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["Northport에서는 기타 민간 주거가 가장 높다.", "Eastbridge는 대학 주거 비율이 네 곳 중 가장 높다.", "Lakeside의 기타 민간 주거 비율은 70%이다.", "Hilltown에서는 민간 학생 주거가 대학 주거보다 높다.", "민간 학생 주거 비율은 Eastbridge가 가장 높다."], answer: 3, explanation: "Hilltown은 대학 주거 22%, 민간 학생 주거 16%이므로 대학 주거가 더 높다." },
+          { prompt: "기타 민간 주거가 가장 높은 캠퍼스는?", options: ["Northport", "Eastbridge", "Lakeside", "Hilltown", "Northport and Hilltown"], answer: 2, explanation: "기타 민간 주거는 Lakeside가 70%로 가장 높다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "Expected Effects of Workplace Automation",
+        table: { caption: "Job outlook by income group", headers: ["Income Group", "Fewer Jobs", "More Jobs", "Little Change", "Not Aware"], rows: [["Lower", "38%", "6%", "22%", "25%"], ["Middle", "32%", "8%", "35%", "15%"], ["Upper", "24%", "11%", "47%", "7%"]] },
+        passage: `<p>The table shows how employed adults in three income groups expected workplace automation to affect job opportunities. Unlisted responses include “not sure.”</p>`,
+        vocab: [["automation", "자동화"], ["income group", "소득 집단"], ["unlisted", "표시되지 않은"]],
+        questions: [
+          { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["일자리 감소 전망 비율은 소득 수준이 높아질수록 단계적으로 낮아진다.", "일자리 증가 전망은 상위 소득 집단이 가장 높다.", "큰 변화가 없다는 응답은 상위 소득 집단이 47%이다.", "상위 소득 집단의 변화 없음 비율은 중간 집단의 두 배를 넘는다.", "자동화를 모른다는 응답은 하위 소득 집단이 가장 높다."], answer: 3, explanation: "상위 집단 47%는 중간 집단 35%의 두 배인 70%를 넘지 않는다." },
+          { prompt: "소득 수준이 높아질수록 일관되게 증가한 응답은?", options: ["Fewer Jobs", "More Jobs", "Not Aware", "Fewer Jobs and Not Aware", "Not Sure only"], answer: 1, explanation: "More Jobs는 하위 6%, 중간 8%, 상위 11%로 계속 증가한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "Exercise Choices by Gender",
+        table: { caption: "Top reported exercise activities", headers: ["Rank", "Women", "Rate", "Men", "Rate"], rows: [["1", "Walking", "44%", "Cycling", "41%"], ["2", "Swimming", "38%", "Football", "37%"], ["3", "Yoga", "31%", "Running", "34%"], ["4", "Cycling", "27%", "Walking", "30%"], ["5", "Running", "25%", "Fishing", "28%"]] },
+        passage: `<p>The table lists the five most frequently reported exercise activities among adult women and men in a community survey. Respondents could select more than one activity.</p>`,
+        vocab: [["rank", "순위"], ["frequently", "빈번하게"], ["select", "선택하다"]],
+        questions: [
+          { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["여성의 1위는 걷기이다.", "남성의 1위는 사이클링이다.", "걷기는 남녀 모두 상위 세 종목에 포함된다.", "달리기는 남녀 목록에 모두 포함된다.", "여성의 수영 비율은 남성의 축구 비율보다 높다."], answer: 2, explanation: "걷기는 여성 1위지만 남성 4위이므로 남녀 모두 상위 세 종목이라는 진술은 틀리다." },
+          { prompt: "남녀 목록에 공통으로 등장한 활동만을 묶은 것은?", options: ["Walking, Cycling, Running", "Swimming, Football, Fishing", "Yoga, Cycling, Football", "Walking, Swimming, Fishing", "Yoga, Running, Fishing"], answer: 0, explanation: "걷기, 사이클링, 달리기가 두 목록에 모두 등장한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "Repair and Recycling of Household Devices",
+        table: { caption: "Waste generation and collection rate", headers: ["Device Type", "Waste Generated", "Collection Rate"], rows: [["Small Devices", "24 t", "18%"], ["Large Appliances", "16 t", "36%"], ["Cooling Equipment", "12 t", "34%"], ["Screens", "8 t", "42%"], ["IT Devices", "6 t", "39%"], ["Lamps", "2 t", "15%"]] },
+        passage: `<p>The table shows the amount of household-device waste generated in one district and the percentage collected through official programs.</p>`,
+        vocab: [["device waste", "기기 폐기물"], ["collection rate", "수거율"], ["district", "지역구"]],
+        questions: [
+          { prompt: "도표의 내용과 일치하지 않는 것은?", options: ["소형 기기의 폐기물 발생량은 여섯 유형 중 가장 많다.", "대형 가전의 수거율은 냉각 장비보다 높다.", "화면 기기의 수거율은 40%를 넘는다.", "램프는 발생량과 수거율이 모두 가장 낮다.", "대형 가전의 수거율은 냉각 장비보다 낮다."], answer: 4, explanation: "대형 가전은 36%, 냉각 장비는 34%이므로 대형 가전의 수거율이 더 높다." },
+          { prompt: "수거율이 가장 높은 기기 유형은?", options: ["Small Devices", "Large Appliances", "Cooling Equipment", "Screens", "IT Devices"], answer: 3, explanation: "Screens의 수거율이 42%로 가장 높다." }
+        ]
+      }
     ]
   },
   "09": {
-    level: "2점", title: "The Desert Fog Beetle",
-    passage: `<p>The desert fog beetle survives in a place where rain is rare. Before sunrise, it climbs a dune and raises the back of its body toward the damp wind. Tiny drops of fog collect on the beetle’s shell. The shell is not equally smooth everywhere: small raised areas attract water, while waxy channels guide the drops toward the beetle’s mouth. Engineers have studied this surface when designing materials that gather water from air. The beetle does not produce water by itself; its body simply helps capture and direct moisture that is already present.</p>`,
-    vocab: [["dune", "모래언덕"], ["damp", "습기 있는"], ["waxy", "밀랍 같은"]],
+    level: "2점", title: "Dr. Lena Ortiz and City Birds",
+    passage: `<p>Lena Ortiz was born in San Diego in 1984 and became interested in birds while helping at a coastal rescue center. She earned a biology degree from Oregon State University in 2007 and completed her doctorate in 2012. Ortiz joined Bay Coast University in 2014, where she studied how artificial light changes the migration of city birds. In 2019, she received the North Shore Science Medal for a community project that trained residents to record nighttime bird calls. Her book Wings After Dark was published in 2021 and later translated into Spanish and Japanese. In 2025, the university named a rooftop observation station after her in recognition of her research and public education.</p>`,
+    vocab: [["artificial light", "인공조명"], ["migration", "이동"], ["observation station", "관측소"]],
     questions: [
-      { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["이 딱정벌레는 해 뜨기 전에 모래언덕에 오른다.", "안개 방울이 딱정벌레의 껍질에 모인다.", "껍질 표면은 모든 부분이 똑같이 매끄럽다.", "껍질의 통로가 물방울을 입 쪽으로 이끈다.", "공학자들은 이 표면의 특성을 연구했다."], answer: 2, explanation: "껍질은 모든 곳이 같지 않고, 물을 끌어당기는 돌출부와 물방울을 이끄는 통로로 이루어진다." },
-      { prompt: "마지막 문장이 강조하는 바로 가장 적절한 것은?", options: ["딱정벌레가 체내에서 물을 합성한다.", "환경에 이미 있는 수분을 모아 이용한다.", "공학 재료가 생물보다 효율적이다.", "사막에는 새벽 안개가 존재하지 않는다.", "껍질의 색이 수분을 만든다."], answer: 1, explanation: "물을 새로 만드는 것이 아니라 공기 중 수분을 포착하고 이동시키는 구조임을 강조한다." }
+      { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["1984년에 San Diego에서 태어났다.", "2007년에 생물학 학위를 받았다.", "박사 학위를 마치자마자 2012년에 Bay Coast University에 합류했다.", "주민들이 밤에 들리는 새소리를 직접 기록하도록 훈련한 지역 공동 사업으로 상을 받았다.", "그녀의 책은 스페인어와 일본어로 번역되었다."], answer: 2, explanation: "박사 학위는 2012년에 마쳤지만 Bay Coast University에는 2014년에 합류했다." },
+      { prompt: "Ortiz의 이름을 따서 명명된 것은?", options: ["해안 구조 센터", "생물학 학위 과정", "옥상 관측소", "야간 조명 회사", "스페인어 번역상"], answer: 2, explanation: "대학은 2025년에 연구와 대중 교육을 기려 옥상 관측소에 그녀의 이름을 붙였다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "3점", title: "Ava Morgan's Blue Solar Film",
+        passage: `<p>Ava Morgan grew up in a family that repaired radios and entered Northfield Institute of Technology at sixteen. In 2016, while trying to make a clear coating for batteries, she produced a thin blue film that conducted electricity when exposed to sunlight. The coating failed as a battery material because it absorbed too much light. Morgan did not discard it. She tested the film on windows and found that it could generate a small amount of power while reducing indoor heat. In 2018, she and two classmates founded ClearSky Materials to develop the product for bus shelters and greenhouse roofs. The company opened its first pilot factory in 2022.</p>`,
+        vocab: [["coating", "코팅제"], ["conduct electricity", "전기를 전도하다"], ["pilot factory", "시험 생산 공장"]],
+        questions: [
+          { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["어린 시절 가족과 함께 라디오를 수리하는 환경에서 자랐다.", "16세에 기술 대학에 입학했다.", "파란 필름은 처음부터 창문용으로 설계되었다.", "두 명의 동급생과 회사를 설립했다.", "2022년에 첫 시험 생산 공장을 열었다."], answer: 2, explanation: "필름은 원래 배터리용 투명 코팅을 만들던 실험에서 우연히 나왔고 이후 창문에 적용되었다." },
+          { prompt: "파란 필름이 창문용으로 활용된 이유로 언급된 것은?", options: ["전력을 만들고 실내 열을 줄였기 때문에", "배터리의 빛 흡수를 완전히 막았기 때문에", "라디오의 소리를 더 크게 만들었기 때문에", "유리 없이도 건물을 지을 수 있게 했기 때문에", "햇빛이 없어도 많은 전기를 생산했기 때문에"], answer: 0, explanation: "햇빛을 받을 때 소량의 전기를 만들고 실내 열도 줄이는 특성을 확인했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "2점", title: "Mateo Silva, Costume Archivist",
+        passage: `<p>Mateo Silva was born in Porto in 1975, the youngest of four children. His mother worked as a theater seamstress and often brought home pieces of damaged costumes. Silva disliked sewing but loved asking who had worn each item and why it had been altered. At nineteen, he moved to Madrid on his own and found work in a small costume-rental warehouse. There he learned to identify fabrics and repair labels without removing evidence of earlier use. He later studied museum conservation at night. In 2008, Silva became the first costume archivist at the Rivera Theater Museum. His catalog connected physical details in costumes with rehearsal notes and performers' memories.</p>`,
+        vocab: [["seamstress", "재봉사"], ["alter", "고치다"], ["conservation", "보존학"]],
+        questions: [
+          { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["네 자녀 중 막내로 태어났다.", "어머니는 극장 재봉사로 일했다.", "어머니의 권유에 따라 마지못해 Madrid로 이주했다.", "일하면서 야간에 박물관 보존학을 공부했다.", "2008년에 Rivera Theater Museum의 최초 의상 기록 담당자가 되었다."], answer: 2, explanation: "Silva는 열아홉 살에 스스로 Madrid로 이주했으며 어머니의 권유로 마지못해 갔다는 내용은 없다." },
+          { prompt: "Silva의 catalog가 연결한 것은?", options: ["의상의 물리적 세부와 공연 관련 기록", "대여 창고의 가격과 관람객 수", "재봉사의 급여와 극장의 위치", "배우의 출생지와 직물 생산량", "박물관의 실내 조명 배치와 야간 수업의 전체 운영 시간"], answer: 0, explanation: "의상의 물리적 특징을 연습 기록과 공연자들의 기억에 연결했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "Noor Haddad and the Moving Dunes",
+        passage: `<p>Noor Haddad was born in Amman in 1968 and moved with her family to southern Jordan when she was eight. She collected unusual stones and kept notes about how dunes changed after storms. Haddad earned a degree in history before beginning graduate study in geology, a choice that surprised her family. In 1997, she joined the Desert Research Council and mapped underground water channels beneath shifting sand. Although she was appointed legal adviser to a regional land office in 2001, she continued field research with support from a university grant. She later served two terms as president of the Jordanian Earth Science Network and led surveys in Jordan, Oman, and Tunisia.</p>`,
+        vocab: [["dune", "모래언덕"], ["underground", "지하의"], ["legal adviser", "법률 고문"]],
+        questions: [
+          { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["여덟 살 때 가족과 함께 남부 Jordan으로 이주했다.", "모래언덕의 변화를 기록했다.", "지질학 학위를 받은 뒤 역사학을 공부했다.", "법률 고문으로 임명된 뒤에도 현장 연구를 계속했다.", "지구과학 네트워크 회장을 두 임기 맡았다."], answer: 2, explanation: "Haddad는 역사학 학위를 먼저 받은 뒤 대학원에서 지질학 공부를 시작했다." },
+          { prompt: "Haddad가 조사 활동을 수행한 지역으로 언급되지 않은 것은?", options: ["Jordan", "Oman", "Tunisia", "southern Jordan", "Canada"], answer: 4, explanation: "Jordan, Oman, Tunisia에서 조사를 이끌었지만 Canada는 언급되지 않았다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "Dr. Elias Park's Mobile Clinics",
+        passage: `<p>Elias Park was born in 1930 to a pharmacist and a school nurse in a mountain town. As a medical student during a civil conflict, he secretly delivered medicine to families cut off by roadblocks. From 1953, he also served as a messenger for a volunteer relief group and treated injured civilians at night. Decades later, the group honored him for protecting displaced families in his parents' home. After the conflict, Park did not leave medicine. He converted two buses into mobile clinics and traveled to villages that had no resident doctor. By the time he retired in 1994, the service had trained twenty rural nurses and opened three permanent health posts.</p>`,
+        vocab: [["roadblock", "도로 차단물"], ["displaced", "삶의 터전을 잃은"], ["health post", "소규모 보건소"]],
+        questions: [
+          { prompt: "윗글의 내용과 일치하지 않는 것은?", options: ["약사와 학교 간호사의 자녀로 태어났다.", "분쟁으로 도로가 차단된 가족들에게 비밀리에 약을 전달했다.", "1953년부터 구호 단체의 전령으로도 일했다.", "분쟁이 끝난 뒤 모든 의료 활동에서 물러났다.", "버스를 이동 진료소로 개조했다."], answer: 3, explanation: "분쟁 뒤 의료 활동을 그만둔 것이 아니라 이동 진료소를 만들어 의사가 없는 마을을 다녔다." },
+          { prompt: "Park가 은퇴할 때까지 이동 진료 서비스가 이룬 일은?", options: ["농촌 간호사 20명을 훈련했다.", "모든 산간 도로를 새로 건설했다.", "구호 단체의 본부를 해외로 옮겼다.", "약국과 학교를 하나의 기관으로 합쳤다.", "상주 의사가 있는 마을만 방문했다."], answer: 0, explanation: "서비스는 농촌 간호사 20명을 훈련하고 세 곳의 상설 보건소를 열었다." }
+        ]
+      }
     ]
   },
   "10": {
