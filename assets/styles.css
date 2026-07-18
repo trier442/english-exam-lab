@@ -364,6 +364,37 @@ h1 {
 .article-section h2 { margin-bottom: 20px; font-size: 1.7rem; letter-spacing: -.045em; }
 .article-section > p { color: var(--ink-soft); }
 
+.guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+.guide-card {
+  position: relative;
+  min-height: 260px;
+  padding: 30px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.guide-card:hover { transform: translateY(-4px); border-color: #aebfda; box-shadow: var(--shadow); }
+.guide-card.accent { background: var(--navy); border-color: var(--navy); }
+.guide-card.accent h2 { color: #fff; }
+.guide-card.accent p { color: rgba(255,255,255,.72); }
+.guide-card.accent .guide-label, .guide-card.accent .card-arrow { color: var(--lime); }
+.guide-label { color: var(--blue); font-size: .76rem; font-weight: 850; letter-spacing: .1em; }
+.guide-card h2 { margin: 30px 0 12px; font-size: 1.55rem; line-height: 1.25; letter-spacing: -.04em; }
+.guide-card p { margin-bottom: 45px; color: var(--ink-soft); }
+.card-arrow { position: absolute; left: 30px; bottom: 26px; color: var(--blue); font-size: .9rem; font-weight: 850; }
+
+.check-list { display: grid; gap: 10px; padding: 0; list-style: none; }
+.check-list li { padding: 15px 17px; background: var(--cloud); border: 1px solid var(--line); border-radius: 13px; }
+
+.example-box { margin: 24px 0; padding: 24px; color: #fff; background: var(--navy); border-radius: 18px; }
+.example-box strong { display: block; margin-bottom: 12px; color: var(--lime); }
+.example-box p { margin-bottom: 8px; color: rgba(255,255,255,.78); }
+.example-box p:last-child { margin-bottom: 0; }
+
 .filter-box {
   display: flex;
   align-items: center;
@@ -436,7 +467,7 @@ h1 {
   .hero { padding-top: 62px; }
   h1 { font-size: 2.65rem; }
   .exam-board { min-height: auto; padding: 24px; }
-  .stats-grid, .route-grid, .principle-list, .chapter-grid, .footer-grid { grid-template-columns: 1fr; }
+  .stats-grid, .route-grid, .principle-list, .chapter-grid, .guide-grid, .footer-grid { grid-template-columns: 1fr; }
   .stat + .stat { border-left: 0; border-top: 1px solid var(--line); }
   .section { padding: 64px 0; }
   .section-heading { display: block; }
