@@ -15,6 +15,8 @@
 - `suneung-english-grammar-checklist.html`: 수능 영어 어법 점검표
 - `suneung-english-listening-routine.html`: 영어듣기 20분 복습 루틴
 - `suneung-english-wrong-answer-note.html`: 수능 영어 오답 노트 작성법
+- `lessons/`: 수능특강 영어 01~30강 및 Test 1~3 강별 학습 페이지 33개
+- `scripts/generate-english-lessons.mjs`: 강별 정적 페이지 생성 스크립트
 - `about.html`, `privacy.html`, `copyright.html`, `contact.html`: 운영 필수 페이지
 - `assets/`: 공통 디자인과 동작
 

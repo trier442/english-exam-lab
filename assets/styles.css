@@ -395,6 +395,31 @@ h1 {
 .example-box p { margin-bottom: 8px; color: rgba(255,255,255,.78); }
 .example-box p:last-child { margin-bottom: 0; }
 
+.lesson-article { max-width: none; }
+
+.lesson-key {
+  display: grid;
+  gap: 7px;
+  margin: 24px 0;
+  padding: 24px;
+  color: #fff;
+  background: var(--navy);
+  border-radius: 18px;
+}
+
+.lesson-key span { color: var(--lime); font-size: .78rem; font-weight: 850; letter-spacing: .08em; }
+.lesson-key strong { font-size: 1.15rem; line-height: 1.5; }
+.write-space { min-width: 220px; color: #8793a4; }
+
+.lesson-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
 .filter-box {
   display: flex;
   align-items: center;
@@ -475,6 +500,8 @@ h1 {
   .feature-panel { padding: 28px 22px; gap: 24px; }
   .page-hero { padding-top: 42px; }
   .page-title h1 { font-size: 2.2rem; }
+  .lesson-nav { align-items: stretch; flex-direction: column; }
+  .lesson-nav .button { width: 100%; }
 }
 
 @media print {
