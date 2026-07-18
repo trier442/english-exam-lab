@@ -97,12 +97,50 @@ export const englishPractice = {
     ]
   },
   "03": {
-    level: "3점", title: "The Clean Line on the Map",
-    passage: `<p>A transit map must simplify a city. It turns winding tracks into clean lines and replaces crowded neighborhoods with evenly spaced dots. This design helps passengers decide where to change trains. Yet the clean line can hide a messy street. Two stations that look equally convenient on paper may offer very different experiences: one may have elevators and clear signs, while the other requires several flights of stairs. The map is not wrong; it is selective. Problems arise only when we forget what it has chosen to leave out. A useful model gives us a direction, but wise users step outside the model before making decisions that depend on local detail.</p>`,
-    vocab: [["winding", "구불구불한"], ["selective", "선택적인"], ["depend on", "~에 달려 있다"]],
+    level: "3점", title: "The Workshop Without a Door",
+    passage: `<p>When Luma Studio began, its six designers worked around one long table in Busan. Five years later, the company still produced animation, but the table was gone. A storyboard artist in Jeju uploaded sketches before lunch. An editor in Manila refined them in the afternoon, and a sound designer in Helsinki opened the same files while the others slept. The studio rented a meeting room only when a client requested an in-person session. Projects could be redirected to a different team without moving equipment or signing a new building lease. The founder joked that <u>the workshop no longer had a door</u>. She did not mean that the company lacked boundaries or management. She meant that its production process could enter and leave many places without depending on a permanent shared workplace.</p>`,
+    vocab: [["storyboard", "스토리보드"], ["redirect", "다른 방향·대상으로 돌리다"], ["permanent", "상설의, 영구적인"]],
     questions: [
-      { prompt: "밑줄 친 ‘the clean line can hide a messy street’가 의미하는 바로 가장 적절한 것은?", options: ["정돈된 시각 모델은 현실의 중요한 차이를 생략할 수 있다.", "대중교통 노선은 도시의 복잡성을 반드시 증가시킨다.", "보기 좋은 지도는 실제 거리보다 제작 비용이 많이 든다.", "여행자는 지도보다 안내 표지판을 신뢰해서는 안 된다.", "모든 역은 지도에 동일한 간격으로 표시되어야 한다."], answer: 0, explanation: "지도는 이동 판단을 돕기 위해 단순화하지만, 엘리베이터나 계단 같은 현장의 차이를 보여 주지 못한다는 뜻이다." },
-      { prompt: "글쓴이의 관점으로 가장 적절한 것은?", options: ["모델은 현실을 완벽하게 재현해야만 쓸모가 있다.", "지도 제작자는 역의 수를 줄여야 한다.", "모델의 유용성과 한계를 함께 인식해야 한다.", "현장 경험은 모든 자료 분석보다 우월하다.", "도시 교통은 시각화할 수 없을 만큼 복잡하다."], answer: 2, explanation: "모델은 방향을 주는 유용한 도구이지만, 세부 결정에서는 생략된 현실을 확인해야 한다고 주장한다." }
+      { prompt: "밑줄 친 ‘the workshop no longer had a door’가 의미하는 바로 가장 적절한 것은?", options: ["회사가 제작 파일과 작업 결과를 외부에 모두 공개했다.", "제작 업무가 고정된 작업 장소에 묶이지 않게 되었다.", "디자이너들이 회사의 관리 체계 없이 독립적으로 일했다.", "회사가 고객과의 모든 대면 회의를 중단하기로 했다.", "직원들이 협업을 위해 하나의 도시로 다시 이동했다."], answer: 1, explanation: "여러 지역의 작업자가 같은 파일을 이어서 처리하고 고정된 사무실 없이 팀을 바꿀 수 있으므로, 업무와 특정 장소의 결속이 약해졌다는 뜻이다." },
+      { prompt: "Luma Studio의 제작 방식에 관한 내용과 일치하는 것은?", options: ["여러 지역의 작업자가 모두 같은 시간대에 근무한다.", "고객 회의가 있을 때마다 새 사무실을 장기간 임차한다.", "장비 이동 없이 프로젝트를 다른 팀에 넘길 수 있다.", "원격 제작을 위해 회사의 관리 체계와 업무 경계를 없앴다.", "스토리보드 작업은 해외 편집자의 작업이 끝난 뒤 시작된다."], answer: 2, explanation: "디지털 파일을 이용하므로 장비 이동이나 새 건물 임대 없이 다른 팀으로 프로젝트를 돌릴 수 있다고 설명한다." }
+    ],
+    extraSets: [
+      {
+        sourceRef: "Exercise 01", level: "2점", title: "Borrowing a Month from the Calendar",
+        passage: `<p>Spring arrived late on Mira’s apartment roof. Cold wind crossed the concrete long after gardens at ground level had begun to wake. Instead of waiting, Mira placed dark water containers behind her seed trays and fixed clear panels around the growing area. During the day, the water absorbed sunlight; after sunset, it released the stored heat while the panels slowed the wind. By early April, her basil plants were already tall enough to cut. A neighbor, whose own seeds had barely opened, said that Mira had <u>borrowed a month from the calendar</u>. Mira had not changed the season itself. She had arranged ordinary materials so that the small space around her plants stayed warmer than the surrounding roof.</p>`,
+        vocab: [["seed tray", "모종판"], ["absorb", "흡수하다"], ["surrounding", "주변의"]],
+        questions: [
+          { prompt: "밑줄 친 ‘borrowed a month from the calendar’가 의미하는 바로 가장 적절한 것은?", options: ["파종 날짜를 잘못 계산하여 적절한 재배 시기를 놓쳤다.", "이웃의 재배 기간보다 한 달 더 많은 물을 사용했다.", "주변 온도를 조절하여 식물의 성장을 앞당겼다.", "따뜻한 지역에서 다 자란 식물을 한 달 동안 빌려 왔다.", "기존 계절의 영향을 받지 않는 새로운 품종을 개발했다."], answer: 2, explanation: "물을 담은 어두운 용기와 투명 패널로 열을 저장하고 바람을 막아 주변보다 따뜻한 미기후를 만들었으므로 성장 시기를 앞당겼다는 뜻이다." },
+          { prompt: "Mira가 dark water containers를 사용한 이유는?", options: ["낮에 흡수한 열을 밤에 다시 내보내려고", "옥상의 강한 바람으로 씨앗을 넓게 퍼뜨리려고", "모종판에 빗물과 햇빛이 닿지 않도록 막으려고", "바질의 잎과 줄기를 더 어두운 색으로 만들려고", "옥상 바닥에 가해지는 전체 무게를 줄이려고"], answer: 0, explanation: "용기의 물이 낮에 햇빛을 흡수하고 해가 진 뒤 저장된 열을 방출한다고 설명한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 02", level: "3점", title: "Repairing Sunday Mornings",
+        passage: `<p>The volunteers first described their project as a simple repair job. The riverside park had broken benches, faded signs, and a path partly covered by weeds. Yet as they worked, older residents stopped to recall the concerts once held there, and parents asked whether the empty lawn could again host weekend games. The group changed its plan. It still replaced boards and cleared the path, but it also built a low stage and marked a safe play area. On reopening day, families stayed for hours instead of merely walking through. Looking across the crowded lawn, the project leader said, “We were not fixing benches; <u>we were repairing Sunday mornings</u>.” The physical work mattered because it restored a shared reason for neighbors to gather.</p>`,
+        vocab: [["riverside", "강변의"], ["reopening", "재개장"], ["restore", "회복시키다"]],
+        questions: [
+          { prompt: "밑줄 친 ‘we were repairing Sunday mornings’가 의미하는 바로 가장 적절한 것은?", options: ["정해진 주말마다 공원의 시설 보수 업무를 반복했다.", "낡은 강변 공원을 수익 중심의 행사장으로 바꾸었다.", "공간을 고쳐 이웃이 함께하는 시간을 되살렸다.", "시설 관리를 위해 일요일의 공원 이용 시간을 줄였다.", "주민의 참여 대신 전문 수리업체에 작업을 맡겼다."], answer: 2, explanation: "벤치 수리는 개별 업무이고, 궁극적인 목적은 가족과 이웃이 다시 모이는 공동체의 시간을 회복하는 데 있었다." },
+          { prompt: "volunteers가 처음 계획에 추가한 것은?", options: ["차량을 위한 주차장과 간이 상점", "낮은 무대와 안전한 놀이 구역", "강 건너편으로 이어지는 보행자 다리", "날씨와 무관하게 쓰는 실내 공연장", "회원만 이용할 수 있는 유료 운동 시설"], answer: 1, explanation: "주민들의 기억과 요청을 들은 뒤 낮은 무대를 만들고 안전한 놀이 구역을 표시했다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 03", level: "3점", title: "The Map Inside the Wings",
+        passage: `<p>Young silver geese raised at a conservation center had never followed adult birds beyond the lake. Researchers expected them to wander when autumn came. Instead, soon after the first cold night, the birds lifted together and turned southwest. Tracking devices showed that their route was not perfectly accurate, but it repeatedly bent toward the wintering coast used by earlier generations. Weather and experience would refine the journey in later years, yet neither could fully explain the first departure. The researchers wrote that <u>the map was folded inside every wing</u>. The birds did not carry a literal chart. They carried inherited biological instructions that shaped where they began to fly, instructions formed through the survival of many generations and capable of reaching the next one.</p>`,
+        vocab: [["conservation center", "보전 센터"], ["refine", "정교하게 다듬다"], ["inherited", "유전된"]],
+        questions: [
+          { prompt: "밑줄 친 ‘the map was folded inside every wing’가 의미하는 바로 가장 적절한 것은?", options: ["각 새의 날개 표면에 실제 이동 경로가 표시되어 있었다.", "보전 센터가 출발 전에 모든 새에게 같은 지도를 부착했다.", "어린 새들이 성체의 과거 비행을 정확하게 기억하고 있었다.", "유전 정보가 첫 이동 방향에 영향을 주었다.", "첫 추위가 이전의 모든 비행 경험을 대신하는 역할을 했다."], answer: 3, explanation: "성체를 따라간 적이 없어도 이전 세대의 월동지를 향한 것은 이동의 출발 방향을 형성하는 유전적 정보가 있음을 뜻한다." },
+          { prompt: "글에 따르면 silver geese의 이동에 관해 추론할 수 있는 것은?", options: ["어린 새들의 첫 이동 경로는 처음부터 완벽하게 정확하다.", "경험이 이후의 이동 경로를 더 정교하게 만들 수 있다.", "날씨 변화는 이동 시점이나 방향과 관련을 맺지 않는다.", "새들은 보전 센터에서 배운 정보만으로 방향을 결정한다.", "이동에 관여하는 유전 정보는 다음 세대로 이어지지 않는다."], answer: 1, explanation: "처음의 방향은 유전적 지침의 영향을 받지만 날씨와 경험이 이후의 여정을 다듬는다고 설명한다." }
+        ]
+      },
+      {
+        sourceRef: "Exercise 04", level: "3점", title: "When the First Brick Moved",
+        passage: `<p>During a hospital seminar, most students agreed that night-shift errors mainly resulted from careless individuals. Their discussion focused on how to identify and retrain those workers. Then Professor Han displayed a chart comparing the same nurses under different schedules. Error rates rose sharply after several short breaks between shifts and fell when recovery time increased. No worker’s ability had suddenly changed. For a moment the room was silent. One student later wrote that <u>the first brick in the wall had moved</u>. The evidence had not answered every question, but it had disturbed the assumption supporting the entire debate. If scheduling conditions influenced errors, individual blame could no longer serve as the only explanation, and the students would have to rebuild their questions around a wider view of responsibility.</p>`,
+        vocab: [["retrain", "재교육하다"], ["recovery time", "회복 시간"], ["disturb", "흔들다"]],
+        questions: [
+          { prompt: "밑줄 친 ‘the first brick in the wall had moved’가 의미하는 바로 가장 적절한 것은?", options: ["세미나가 열린 건물의 안전 문제가 새롭게 발견되었다.", "학생들이 효율적인 토론을 위해 발언 순서를 바꾸었다.", "핵심 전제가 흔들려 기존 설명을 재검토하게 되었다.", "교수가 한 번의 자료로 모든 오류 원인을 완전히 증명했다.", "개인의 부주의를 강조하던 기존 주장이 더 강해졌다."], answer: 2, explanation: "오류를 개인의 부주의만으로 보던 토대가 근무 일정 자료로 흔들렸기 때문에 논의 전체를 더 넓은 책임 관점에서 다시 구성해야 한다는 뜻이다." },
+          { prompt: "Professor Han의 chart가 보여 준 내용으로 가장 적절한 것은?", options: ["같은 간호사의 업무 능력이 근무할 때마다 크게 달라졌다.", "교대 사이 회복 시간이 짧을수록 오류가 늘었다.", "별도의 재교육을 받은 사람에게서만 오류가 발생했다.", "야간 근무의 오류는 언제나 동일한 개인이 일으켰다.", "근무 일정의 차이는 전체 오류율에 영향을 주지 않았다."], answer: 1, explanation: "교대 사이의 짧은 휴식이 이어질 때 오류율이 상승하고 회복 시간이 늘면 감소했다." }
+        ]
+      }
     ]
   },
   "04": {
