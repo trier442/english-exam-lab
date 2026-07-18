@@ -17,14 +17,24 @@ const lessonFiles = fs.readdirSync(path.join(root, "lessons"))
 
 assert(lessonFiles.length === 33, `영어 강의 페이지: 예상 33개, 실제 ${lessonFiles.length}개`);
 
-for (const id of ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"]) {
+const lessonIds = [
+  "01", "02", "03", "04", "05", "06", "07", "08", "09", "10",
+  "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+  "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+  "T1", "T2", "T3",
+];
+
+for (const id of lessonIds) {
   const sourceItems = englishSourceAnalysis[id] ?? [];
   const practice = englishPractice[id];
   const sets = practice ? [practice, ...(practice.extraSets ?? [])] : [];
   const questionCount = sets.reduce((sum, set) => sum + set.questions.length, 0);
-  const expectedSets = ["16", "17"].includes(id) ? 7 : 5;
+  const expectedSets = ["16", "17"].includes(id) ? 7
+    : /^2[1-9]$|^30$/.test(id) ? 4
+      : 5;
+  const expectedSources = id.startsWith("T") ? 0 : expectedSets;
   const expectedQuestions = expectedSets * 2;
-  assert(sourceItems.length === expectedSets, `${id}강 교재 분석 수: ${sourceItems.length}`);
+  assert(sourceItems.length === expectedSources, `${id}강 교재 분석 수: ${sourceItems.length}`);
   assert(sets.length === expectedSets, `${id}강 변형 지문 수: ${sets.length}`);
   assert(questionCount === expectedQuestions, `${id}강 변형문제 수: ${questionCount}`);
 
@@ -43,7 +53,7 @@ for (const id of ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "1
       assert(new Set(question.options).size === 5, `${id}강 ${set.title}: 중복 선택지`);
       assert(question.answer >= 0 && question.answer < 5, `${id}강 ${set.title}: 잘못된 정답 번호`);
       assert(Boolean(question.explanation), `${id}강 ${set.title}: 해설 누락`);
-      if (["04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"].includes(id)) {
+      if (!["01", "02", "03"].includes(id)) {
         const lengths = question.options.map((option) => [...option].length);
         const maxLength = Math.max(...lengths);
         const longestCount = lengths.filter((length) => length === maxLength).length;
@@ -53,9 +63,9 @@ for (const id of ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "1
     }
   }
 
-  const lessonName = lessonFiles.find((name) => name.includes(`-${id}-`));
+  const lessonName = lessonFiles.find((name) => name.includes(`-${id.toLowerCase()}-`));
   const lessonHtml = lessonName ? fs.readFileSync(path.join(root, "lessons", lessonName), "utf8") : "";
-  assert(occurrences(lessonHtml, /class="source-learning-unit"/g) === expectedSets, `${id}강 생성 페이지의 분석 단위가 ${expectedSets}개가 아님`);
+  assert(occurrences(lessonHtml, /class="source-learning-unit"/g) === expectedSources, `${id}강 생성 페이지의 분석 단위가 ${expectedSources}개가 아님`);
   assert(occurrences(lessonHtml, /data-practice-question/g) === expectedQuestions, `${id}강 생성 페이지의 문제가 ${expectedQuestions}개가 아님`);
 }
 
@@ -73,7 +83,7 @@ for (const name of lessonFiles) {
   }
 }
 
-assert(totalQuestions === 221, `전체 영어 변형문제: 예상 221개, 실제 ${totalQuestions}개`);
+assert(totalQuestions === 318, `전체 영어 변형문제: 예상 318개, 실제 ${totalQuestions}개`);
 assert(Math.max(...answerDistribution) - Math.min(...answerDistribution) <= 1,
   `정답 분포 불균형: ${answerDistribution.join("/")}`);
 

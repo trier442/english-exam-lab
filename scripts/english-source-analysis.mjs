@@ -1,6 +1,9 @@
 import { englishSourceAnalysis1012 } from "./english-source-analysis-10-12.mjs";
 import { englishSourceAnalysis1315 } from "./english-source-analysis-13-15.mjs";
 import { englishSourceAnalysis1618 } from "./english-source-analysis-16-18.mjs";
+import { englishSourceAnalysis1920 } from "./english-source-analysis-19-20.mjs";
+import { englishSourceAnalysis2125 } from "./english-source-analysis-21-25.mjs";
+import { englishSourceAnalysis2630 } from "./english-source-analysis-26-30.mjs";
 
 // 교재 원문을 옮기지 않고 문항 번호와 쪽수를 기준으로 정리한 분석 데이터입니다.
 // 각 항목은 내용 요약, 구조, 문법, 어휘, 원문 문항 해제로 구성됩니다.
@@ -656,5 +659,8 @@ export const englishSourceAnalysis = {
   ],
   ...englishSourceAnalysis1012,
   ...englishSourceAnalysis1315,
-  ...englishSourceAnalysis1618
+  ...englishSourceAnalysis1618,
+  ...englishSourceAnalysis1920,
+  ...englishSourceAnalysis2125,
+  ...englishSourceAnalysis2630
 };
