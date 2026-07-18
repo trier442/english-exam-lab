@@ -9,6 +9,12 @@
 - `2027-suneung-reading.html`: 영어독해연습 9주 과정
 - `2027-suneung-listening.html`: 영어듣기 26강 목차와 복습법
 - `study-plan.html`: 세 교재 통합 9주 계획
+- `guides.html`: 독해·어휘·어법·듣기·오답 정리 학습 자료 모음
+- `suneung-english-reading-strategy.html`: 수능 영어 독해 4단계
+- `suneung-english-vocabulary-study.html`: 수능 영어 단어 암기법
+- `suneung-english-grammar-checklist.html`: 수능 영어 어법 점검표
+- `suneung-english-listening-routine.html`: 영어듣기 20분 복습 루틴
+- `suneung-english-wrong-answer-note.html`: 수능 영어 오답 노트 작성법
 - `about.html`, `privacy.html`, `copyright.html`, `contact.html`: 운영 필수 페이지
 - `assets/`: 공통 디자인과 동작
 
