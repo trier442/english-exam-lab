@@ -6,6 +6,7 @@
 
 - `index.html`: 메인 페이지
 - `2027-suneung-english.html`: 수능특강 영어 01~30강 제시문 144개 분석, Test 1~3과 자체 제작 변형문제 318문항
+- `2027-suneung-english-grammar.html`: 144개 제시문의 핵심 영문법 576개를 12개 영역으로 묶은 개념·예문·확인문제 페이지
 - `2027-suneung-reading.html`: 영어독해연습 9주 과정
 - `2027-suneung-listening.html`: 영어듣기 26강 목차와 복습법
 - `study-plan.html`: 세 교재 통합 9주 계획
@@ -18,7 +19,10 @@
 - `lessons/`: 수능특강 영어 33개 변형문제 페이지, 영어독해연습 15개·영어듣기 26개 강별 학습 페이지
 - `scripts/english-practice-data.mjs`: 수능특강 영어 연계형 자체 제작 지문·문항·해설 데이터
 - `scripts/english-source-analysis.mjs`: 교재 문항별 내용·구조·영문법·어휘·정답·오답 분석 데이터
+- `scripts/english-grammar-guide.mjs`: 영문법 12개 영역의 개념·자체 예문·확인문제 데이터
 - `scripts/generate-english-lessons.mjs`: 강별 정적 페이지 생성 스크립트
+- `scripts/generate-grammar-page.mjs`: 전 범위 영문법 총정리 페이지 생성 스크립트
+- `scripts/validate-grammar-page.mjs`: 영문법 포인트·문항·정답 분포·강별 연결 검증
 - `scripts/generate-reading-listening-lessons.mjs`: 독해연습·듣기 강별 페이지 생성 스크립트
 - `scripts/generate-sitemap.mjs`: 공개 HTML canonical 기준 사이트맵 생성 스크립트
 - `about.html`, `privacy.html`, `copyright.html`, `contact.html`: 운영 필수 페이지
