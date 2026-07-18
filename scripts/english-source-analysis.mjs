@@ -1,3 +1,7 @@
+import { englishSourceAnalysis1012 } from "./english-source-analysis-10-12.mjs";
+import { englishSourceAnalysis1315 } from "./english-source-analysis-13-15.mjs";
+import { englishSourceAnalysis1618 } from "./english-source-analysis-16-18.mjs";
+
 // 교재 원문을 옮기지 않고 문항 번호와 쪽수를 기준으로 정리한 분석 데이터입니다.
 // 각 항목은 내용 요약, 구조, 문법, 어휘, 원문 문항 해제로 구성됩니다.
 
@@ -649,5 +653,8 @@ export const englishSourceAnalysis = {
       solution: "전쟁 뒤 의료 활동을 중단한 것이 아니라 의료 서비스가 부족한 남프랑스 농촌에 병원을 세웠습니다. 모든 의료 활동에서 물러났다는 ⑤가 불일치합니다.",
       traps: [["①", "아버지는 의사, 어머니는 간호사였습니다."], ["②", "유대인 친구들이 겪는 차별에 특히 영향을 받았습니다."], ["③", "제2차 세계 대전 중 의학을 공부했습니다."], ["④", "1942년부터 필요한 사람들에게 의료 지원을 제공했습니다."]]
     }
-  ]
+  ],
+  ...englishSourceAnalysis1012,
+  ...englishSourceAnalysis1315,
+  ...englishSourceAnalysis1618
 };

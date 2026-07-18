@@ -1,6 +1,10 @@
 // 영어시험연구소가 직접 작성한 수능형 연계 지문과 변형문제입니다.
 // EBS 교재 원문, 선택지, 정답·해설을 복제하지 않습니다.
 
+import { englishPractice1012 } from "./english-practice-data-10-12.mjs";
+import { englishPractice1315 } from "./english-practice-data-13-15.mjs";
+import { englishPractice1618 } from "./english-practice-data-16-18.mjs";
+
 export const englishPractice = {
   "01": {
     level: "3점", title: "Community Library Volunteer Schedule",
@@ -512,6 +516,9 @@ export const englishPractice = {
       { prompt: "두 방법을 결합하는 이유는?", options: ["두 방법이 동일한 정보만 제공하기 때문에", "실험실 검사가 센서보다 항상 빠르기 때문에", "각 방법의 한계를 다른 방법이 보완하기 때문에", "강의 상태가 시간에 따라 변하지 않기 때문에", "자동 측정이 모든 물질을 정확히 구별하기 때문에"], answer: 2, explanation: "센서는 시간 변화를 잡지만 화학적으로 모호하고, 실험실 검사는 정확하지만 짧은 사건을 놓칠 수 있어 상호 보완적이다." }
     ]
   },
+  ...englishPractice1012,
+  ...englishPractice1315,
+  ...englishPractice1618,
   "19": {
     level: "3점", title: "The Community Archive",
     passage: `<p>When the old Harbor Market was scheduled for demolition, local historian Amina Cole asked residents to bring photographs and stories to the library. She expected a few boxes. Instead, hundreds of people arrived with receipts, handwritten menus, and memories of first jobs. Amina realized that the market’s history did not exist in a single official record. It was scattered across ordinary objects.</p><p>The library created a digital archive, but it did not simply scan everything. Volunteers interviewed each contributor about why an item mattered. A faded receipt, for example, became evidence of a family business that had offered credit during a factory strike. By attaching stories to objects, the project preserved relationships that a photograph of the building alone could not show.</p>`,
