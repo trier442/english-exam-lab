@@ -22,7 +22,8 @@ const urls = walk(root)
     return a.localeCompare(b, "en");
   });
 
-const lines = urls.map((url) => `  <url><loc>${url}</loc><lastmod>2026-07-18</lastmod></url>`);
+const lastModified = new Date().toISOString().slice(0, 10);
+const lines = urls.map((url) => `  <url><loc>${url}</loc><lastmod>${lastModified}</lastmod></url>`);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${lines.join("\n")}\n</urlset>\n`;
 writeFileSync(join(root, "sitemap.xml"), sitemap, "utf8");
 console.log(`Generated sitemap with ${urls.length} URLs`);
