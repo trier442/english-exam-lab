@@ -353,9 +353,35 @@ const renderTable = (table) => table ? `<div class="exam-table-wrap"><table clas
 
 const renderVocab = (vocab) => `<div class="vocab-strip" aria-label="핵심 어휘">${vocab.map(([word, meaning]) => `<span><strong>${escape(word)}</strong>${escape(meaning)}</span>`).join("")}</div>`;
 
-// 정답 번호가 순차적이거나 한 번호에 편중되지 않도록 고정된 무작위 배열을 사용합니다.
-// 77문항 기준 분포: ① 16, ② 16, ③ 15, ④ 15, ⑤ 15. 인접한 정답 번호는 중복되지 않습니다.
-const answerTargets = [2,5,3,1,4,1,5,3,4,2,4,1,4,1,3,1,2,5,1,5,2,5,2,3,2,5,3,1,4,5,3,5,4,3,1,2,3,2,3,4,1,2,5,1,2,1,4,5,2,3,5,4,5,2,1,5,1,4,2,3,2,1,4,5,3,5,4,2,4,3,1,2,4,3,4,1,3].map((number) => number - 1);
+// 정답 번호가 순차적으로 반복되거나 한 번호에 편중되지 않도록 전체 문항 수에 맞춰
+// 결정론적인 배열을 만듭니다. 번호별 개수 차이는 최대 1이며 인접한 번호는 겹치지 않습니다.
+const totalQuestionCount = lessons.reduce((total, lesson) => {
+  const practice = englishPractice[lesson.no];
+  if (!practice) return total;
+  return total + practice.questions.length + (practice.extraSets || []).reduce((sum, set) => sum + set.questions.length, 0);
+}, 0);
+
+const buildAnswerTargets = (total) => {
+  const opening = [2, 5, 3, 1, 4, 1, 5, 3, 4, 2, 4, 2, 5, 1, 3, 5, 2, 4, 1, 3].map((number) => number - 1);
+  const targets = opening.slice(0, total);
+  const counts = Array(5).fill(0);
+  targets.forEach((number) => { counts[number] += 1; });
+
+  while (targets.length < total) {
+    const position = targets.length;
+    const previous = targets.at(-1);
+    const candidates = [0, 1, 2, 3, 4]
+      .filter((number) => number !== previous)
+      .sort((a, b) => counts[a] - counts[b] || ((position * 7 + a * 3) % 11) - ((position * 7 + b * 3) % 11));
+    const next = candidates[0];
+    targets.push(next);
+    counts[next] += 1;
+  }
+
+  return targets;
+};
+
+const answerTargets = buildAnswerTargets(totalQuestionCount);
 let answerCursor = 0;
 
 const renderQuestions = (lesson, questions, setIndex = 0) => questions.map((question, questionIndex) => {
