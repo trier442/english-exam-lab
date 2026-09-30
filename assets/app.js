@@ -2,6 +2,33 @@
   const menuButton = document.querySelector('[data-menu-button]');
   const nav = document.querySelector('[data-main-nav]');
 
+  const unifiedMainNavItems = [
+    ['2027-suneung-english.html', '수능특강 영어', 'english'],
+    ['2027-suneung-reading.html', '영어독해연습', 'reading'],
+    ['2027-suneung-listening.html', '영어듣기', 'listening'],
+    ['2027-suneung-english-grammar.html', '영문법', 'grammar'],
+    ['study-plan.html', '학습 계획', 'plan'],
+    ['guides.html', '학습 자료', 'guides']
+  ];
+
+  if (nav) {
+    const path = window.location.pathname;
+    const nested = /\/(lessons|grammar)\//.test(path);
+    const prefix = nested ? '../' : '';
+    let active = '';
+    if (/\/lessons\/2027-suneung-english-/.test(path) || /\/2027-suneung-english\.html$/.test(path)) active = 'english';
+    else if (/2027-suneung-reading/.test(path)) active = 'reading';
+    else if (/2027-suneung-listening/.test(path)) active = 'listening';
+    else if (/\/grammar\//.test(path) || /2027-suneung-english-grammar\.html$/.test(path)) active = 'grammar';
+    else if (/study-plan\.html$/.test(path)) active = 'plan';
+    else if (/guides\.html$/.test(path) || /suneung-english-/.test(path)) active = 'guides';
+
+    nav.setAttribute('aria-label', '주요 메뉴');
+    nav.innerHTML = unifiedMainNavItems.map(([href, label, key]) =>
+      `<a href="${prefix}${href}"${active === key ? ' aria-current="page"' : ''}>${label}</a>`
+    ).join('');
+  }
+
   if (menuButton && nav) {
     menuButton.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
