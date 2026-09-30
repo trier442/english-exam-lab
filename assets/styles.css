@@ -752,3 +752,13 @@ h1 {
   .chapter-card { break-inside: avoid; }
   .answer-panel[hidden] { display: block; }
 }
+
+.listening-practice-set { display: grid; gap: 20px; }
+.listening-player { padding: 22px; background: #f4f8ff; border: 1px solid #d9e6fb; border-radius: 16px; }
+.listening-player-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.listening-player-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.listening-player select { padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--navy); font-weight: 800; }
+.listening-player-status { margin: 10px 0 0; color: var(--ink-soft); font-size: .84rem; }
+.listening-transcript { margin-top: 16px; border-top: 1px solid #d9e6fb; padding-top: 14px; }
+.listening-transcript summary { cursor: pointer; color: var(--blue); font-weight: 850; }
+.listening-transcript div { margin-top: 12px; padding: 16px; background: #fff; border-radius: 12px; color: var(--ink-soft); line-height: 1.85; white-space: pre-line; }
