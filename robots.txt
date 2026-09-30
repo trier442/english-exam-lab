@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /ads.txt
 Allow: /
 
 Sitemap: https://englishexamlab.kr/sitemap.xml
