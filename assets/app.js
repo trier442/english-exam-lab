@@ -1,4 +1,15 @@
 (() => {
+  const adsenseClient = 'ca-pub-5341216668095254';
+  const adsenseExcluded = /\/(privacy|copyright|contact|about|learning-map|404)\.html$/;
+  if (!adsenseExcluded.test(window.location.pathname) &&
+      !document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+    const adsense = document.createElement('script');
+    adsense.async = true;
+    adsense.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + adsenseClient;
+    adsense.crossOrigin = 'anonymous';
+    document.head.appendChild(adsense);
+  }
+
   const menuButton = document.querySelector('[data-menu-button]');
   const nav = document.querySelector('[data-main-nav]');
 
