@@ -801,6 +801,7 @@ h1 {
 .daily-retry-grid strong { display: block; color: var(--navy); font-size: .95rem; }
 .daily-retry > p:last-child { margin-top: 14px; color: var(--ink-soft); }
 .daily-day-group { padding: 30px; background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 16px 40px rgba(16,35,63,.06); }
+.daily-day-group + .daily-day-group { margin-top: 18px; }
 .daily-day-group > header { display: flex; justify-content: space-between; gap: 20px; align-items: start; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .daily-day-group h2 { margin-top: 5px; color: var(--navy); }
 .daily-session-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }

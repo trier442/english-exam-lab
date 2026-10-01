@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-01T19:03:44+09:00",
+  "updatedAt": "2026-10-02T08:00:58+09:00",
   "sequence": [
     "english",
     "reading",
@@ -11,11 +11,11 @@
     "english": {
       "title": "2027학년도 EBS 수능특강 영어",
       "status": "in_progress",
-      "learnedCount": 25,
-      "nextItemIndex": 25,
+      "learnedCount": 50,
+      "nextItemIndex": 50,
       "nextSourcePage": 2,
-      "nextSection": "Part I 유형편 04",
-      "nextHeadword": "transportation"
+      "nextSection": "글의 목적 파악 01 · 03",
+      "nextHeadword": "trunk"
     },
     "reading": {
       "title": "2027학년도 EBS 수능특강 영어독해연습",
@@ -30,40 +30,40 @@
       "nextItemIndex": 0
     }
   },
-  "totalLearned": 25,
+  "totalLearned": 50,
   "lastMorning": {
-    "date": "2026-10-01",
-    "page": "daily-vocab/2026-10-01-am.html",
+    "date": "2026-10-02",
+    "page": "daily-vocab/2026-10-02-am.html",
     "source": "english",
     "sourcePdfPage": 2,
-    "range": "Part I 유형편 01~04 · diversity → loan",
+    "range": "Part I 유형편 04 및 글의 목적 파악 01 · transportation → urgently",
     "count": 25,
     "headwords": [
-      "diversity",
-      "enrich",
-      "unique",
-      "unity",
-      "revision",
-      "manuscript",
-      "cooperation",
-      "thoroughly",
-      "insightful",
-      "critical",
-      "incorporate",
-      "mention",
-      "briefly",
-      "complaint",
-      "wedding anniversary",
-      "lifeless",
-      "spotted",
-      "compensation",
-      "refund",
-      "settle into",
-      "enthusiastic",
-      "tiresome",
-      "all in all",
-      "repayment",
-      "loan"
+      "transportation",
+      "translate",
+      "immigration",
+      "document",
+      "property",
+      "ignore",
+      "rejection",
+      "ridiculous",
+      "show off",
+      "superior",
+      "dizzy",
+      "pack",
+      "assistance",
+      "hut",
+      "nausea",
+      "guilt",
+      "blend",
+      "precious",
+      "possession",
+      "comfort",
+      "interrupt",
+      "roar",
+      "weapon",
+      "whisper",
+      "urgently"
     ]
   },
   "lastEvening": {
@@ -87,6 +87,14 @@
       "evening": "daily-vocab/2026-10-01-pm.html",
       "source": "english",
       "range": "Part I 유형편 01~04 · diversity → loan",
+      "count": 25
+    },
+    {
+      "date": "2026-10-02",
+      "morning": "daily-vocab/2026-10-02-am.html",
+      "evening": null,
+      "source": "english",
+      "range": "Part I 유형편 04 및 글의 목적 파악 01 · transportation → urgently",
       "count": 25
     }
   ]
