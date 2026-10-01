@@ -8,12 +8,13 @@
     ['2027-suneung-listening.html', '영어듣기', 'listening'],
     ['2027-suneung-english-grammar.html', '영문법', 'grammar'],
     ['study-plan.html', '학습 계획', 'plan'],
+    ['daily-vocab.html', '매일 영단어·숙어', 'vocab'],
     ['guides.html', '학습 자료', 'guides']
   ];
 
   if (nav) {
     const path = window.location.pathname;
-    const nested = /\/(lessons|grammar)\//.test(path);
+    const nested = /\/(lessons|grammar|daily-vocab)\//.test(path);
     const prefix = nested ? '../' : '';
     let active = '';
     if (/\/lessons\/2027-suneung-english-/.test(path) || /\/2027-suneung-english\.html$/.test(path)) active = 'english';
@@ -21,6 +22,7 @@
     else if (/2027-suneung-listening/.test(path)) active = 'listening';
     else if (/\/grammar\//.test(path) || /2027-suneung-english-grammar\.html$/.test(path)) active = 'grammar';
     else if (/study-plan\.html$/.test(path)) active = 'plan';
+    else if (/daily-vocab/.test(path)) active = 'vocab';
     else if (/guides\.html$/.test(path) || /suneung-english-/.test(path)) active = 'guides';
 
     nav.setAttribute('aria-label', '주요 메뉴');

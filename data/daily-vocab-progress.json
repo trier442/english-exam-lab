@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-01T19:03:44+09:00",
+  "sequence": [
+    "english",
+    "reading",
+    "listening"
+  ],
+  "currentBook": "english",
+  "books": {
+    "english": {
+      "title": "2027학년도 EBS 수능특강 영어",
+      "status": "in_progress",
+      "learnedCount": 25,
+      "nextItemIndex": 25,
+      "nextSourcePage": 2,
+      "nextSection": "Part I 유형편 04",
+      "nextHeadword": "transportation"
+    },
+    "reading": {
+      "title": "2027학년도 EBS 수능특강 영어독해연습",
+      "status": "not_started",
+      "learnedCount": 0,
+      "nextItemIndex": 0
+    },
+    "listening": {
+      "title": "2027학년도 EBS 수능특강 영어듣기",
+      "status": "not_started",
+      "learnedCount": 0,
+      "nextItemIndex": 0
+    }
+  },
+  "totalLearned": 25,
+  "lastMorning": {
+    "date": "2026-10-01",
+    "page": "daily-vocab/2026-10-01-am.html",
+    "source": "english",
+    "sourcePdfPage": 2,
+    "range": "Part I 유형편 01~04 · diversity → loan",
+    "count": 25,
+    "headwords": [
+      "diversity",
+      "enrich",
+      "unique",
+      "unity",
+      "revision",
+      "manuscript",
+      "cooperation",
+      "thoroughly",
+      "insightful",
+      "critical",
+      "incorporate",
+      "mention",
+      "briefly",
+      "complaint",
+      "wedding anniversary",
+      "lifeless",
+      "spotted",
+      "compensation",
+      "refund",
+      "settle into",
+      "enthusiastic",
+      "tiresome",
+      "all in all",
+      "repayment",
+      "loan"
+    ]
+  },
+  "lastEvening": {
+    "date": "2026-10-01",
+    "page": "daily-vocab/2026-10-01-pm.html",
+    "basedOn": "daily-vocab/2026-10-01-am.html",
+    "questionCount": 30,
+    "retry": [
+      "incorporate",
+      "thoroughly",
+      "compensation",
+      "settle into",
+      "repayment"
+    ],
+    "advancedNewVocabulary": false
+  },
+  "history": [
+    {
+      "date": "2026-10-01",
+      "morning": "daily-vocab/2026-10-01-am.html",
+      "evening": "daily-vocab/2026-10-01-pm.html",
+      "source": "english",
+      "range": "Part I 유형편 01~04 · diversity → loan",
+      "count": 25
+    }
+  ]
+}
