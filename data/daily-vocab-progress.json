@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-02T08:00:58+09:00",
+  "updatedAt": "2026-10-02T19:03:23+09:00",
   "sequence": [
     "english",
     "reading",
@@ -67,16 +67,16 @@
     ]
   },
   "lastEvening": {
-    "date": "2026-10-01",
-    "page": "daily-vocab/2026-10-01-pm.html",
-    "basedOn": "daily-vocab/2026-10-01-am.html",
+    "date": "2026-10-02",
+    "page": "daily-vocab/2026-10-02-pm.html",
+    "basedOn": "daily-vocab/2026-10-02-am.html",
     "questionCount": 30,
     "retry": [
-      "incorporate",
-      "thoroughly",
-      "compensation",
-      "settle into",
-      "repayment"
+      "immigration",
+      "ridiculous",
+      "nausea",
+      "possession",
+      "urgently"
     ],
     "advancedNewVocabulary": false
   },
@@ -92,10 +92,10 @@
     {
       "date": "2026-10-02",
       "morning": "daily-vocab/2026-10-02-am.html",
-      "evening": null,
+      "evening": "daily-vocab/2026-10-02-pm.html",
       "source": "english",
       "range": "Part I 유형편 04 및 글의 목적 파악 01 · transportation → urgently",
       "count": 25
     }
   ]
-}
+}\n
