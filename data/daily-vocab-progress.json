@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-03T08:00:00+09:00",
+  "updatedAt": "2026-10-03T19:00:00+09:00",
   "sequence": [
     "english",
     "reading",
@@ -67,16 +67,16 @@
     ]
   },
   "lastEvening": {
-    "date": "2026-10-02",
-    "page": "daily-vocab/2026-10-02-pm.html",
-    "basedOn": "daily-vocab/2026-10-02-am.html",
+    "date": "2026-10-03",
+    "page": "daily-vocab/2026-10-03-pm.html",
+    "basedOn": "daily-vocab/2026-10-03-am.html",
     "questionCount": 30,
     "retry": [
-      "immigration",
-      "ridiculous",
-      "nausea",
-      "possession",
-      "urgently"
+      "unassuming",
+      "pitiless",
+      "vehicle",
+      "microclimate",
+      "bank"
     ],
     "advancedNewVocabulary": false
   },
@@ -100,7 +100,7 @@
     {
       "date": "2026-10-03",
       "morning": "daily-vocab/2026-10-03-am.html",
-      "evening": null,
+      "evening": "daily-vocab/2026-10-03-pm.html",
       "source": "english",
       "range": "심경 변화 파악 02 및 함축적 의미 파악 03 · trunk → flat",
       "count": 25
