@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-04T08:03:27+09:00",
+  "updatedAt": "2026-10-04T19:00:00+09:00",
   "sequence": [
     "english",
     "reading",
@@ -67,16 +67,16 @@
     ]
   },
   "lastEvening": {
-    "date": "2026-10-03",
-    "page": "daily-vocab/2026-10-03-pm.html",
-    "basedOn": "daily-vocab/2026-10-03-am.html",
+    "date": "2026-10-04",
+    "page": "daily-vocab/2026-10-04-pm.html",
+    "basedOn": "daily-vocab/2026-10-04-am.html",
     "questionCount": 30,
     "retry": [
-      "unassuming",
-      "pitiless",
-      "vehicle",
-      "microclimate",
-      "bank"
+      "repeat business",
+      "manipulation",
+      "long-held",
+      "symbolic logic",
+      "to the core"
     ],
     "advancedNewVocabulary": false
   },
@@ -108,7 +108,7 @@
     {
       "date": "2026-10-04",
       "morning": "daily-vocab/2026-10-04-am.html",
-      "evening": null,
+      "evening": "daily-vocab/2026-10-04-pm.html",
       "source": "english",
       "range": "함축적 의미 파악 03 및 요지 파악 04 · soil heating → concentrate",
       "count": 25
