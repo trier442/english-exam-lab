@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T19:00:00+09:00",
+  "updatedAt": "2026-10-07T08:00:00+09:00",
   "sequence": [
     "english",
     "reading",
@@ -11,11 +11,11 @@
     "english": {
       "title": "2027학년도 EBS 수능특강 영어",
       "status": "in_progress",
-      "learnedCount": 150,
-      "nextItemIndex": 150,
+      "learnedCount": 175,
+      "nextItemIndex": 175,
       "nextSourcePage": 4,
-      "nextSection": "요지 파악 04 · 04",
-      "nextHeadword": "empathy"
+      "nextSection": "주장 파악 05 · 03",
+      "nextHeadword": "polish"
     },
     "reading": {
       "title": "2027학년도 EBS 수능특강 영어독해연습",
@@ -30,40 +30,40 @@
       "nextItemIndex": 0
     }
   },
-  "totalLearned": 150,
+  "totalLearned": 175,
   "lastMorning": {
-    "date": "2026-10-06",
-    "page": "daily-vocab/2026-10-06-am.html",
+    "date": "2026-10-07",
+    "page": "daily-vocab/2026-10-07-am.html",
     "source": "english",
     "sourcePdfPage": 4,
-    "range": "요지 파악 04 · antibiotic → insecure",
+    "range": "요지 파악 04 및 주장 파악 05 · empathy → servant leader",
     "count": 25,
     "headwords": [
-      "antibiotic",
-      "immunization",
-      "accomplishment",
-      "intuition",
-      "testing",
-      "confirm",
-      "disprove",
-      "reject",
-      "alter",
-      "hypothesis",
-      "justification",
-      "hold to",
-      "instinctively",
-      "absolute",
-      "must",
-      "ultimate",
-      "awkwardness",
-      "dread",
-      "normal",
-      "internal",
-      "anxiety",
-      "boost",
-      "icebreaker",
-      "lifeline",
-      "insecure"
+      "empathy",
+      "flip",
+      "compassion",
+      "inherent",
+      "overwhelming",
+      "comprehend",
+      "much less",
+      "interfere with",
+      "overcome",
+      "oversized",
+      "identify",
+      "break down",
+      "manageable",
+      "revisit",
+      "distribution",
+      "portfolio",
+      "nutrition",
+      "herb",
+      "regulatory",
+      "misleading",
+      "reputable",
+      "devote",
+      "medical facility",
+      "embrace",
+      "servant leader"
     ]
   },
   "lastEvening": {
@@ -127,6 +127,14 @@
       "evening": "daily-vocab/2026-10-06-pm.html",
       "source": "english",
       "range": "요지 파악 04 · antibiotic → insecure",
+      "count": 25
+    },
+    {
+      "date": "2026-10-07",
+      "morning": "daily-vocab/2026-10-07-am.html",
+      "evening": null,
+      "source": "english",
+      "range": "요지 파악 04 및 주장 파악 05 · empathy → servant leader",
       "count": 25
     }
   ]
