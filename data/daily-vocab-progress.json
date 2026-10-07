@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T08:00:00+09:00",
+  "updatedAt": "2026-10-07T19:00:00+09:00",
   "sequence": [
     "english",
     "reading",
@@ -67,16 +67,16 @@
     ]
   },
   "lastEvening": {
-    "date": "2026-10-06",
-    "page": "daily-vocab/2026-10-06-pm.html",
-    "basedOn": "daily-vocab/2026-10-06-am.html",
+    "date": "2026-10-07",
+    "page": "daily-vocab/2026-10-07-pm.html",
+    "basedOn": "daily-vocab/2026-10-07-am.html",
     "questionCount": 30,
     "retry": [
-      "immunization",
-      "hypothesis",
-      "justification",
-      "hold to",
-      "instinctively"
+      "inherent",
+      "much less",
+      "break down",
+      "regulatory",
+      "servant leader"
     ],
     "advancedNewVocabulary": false
   },
@@ -132,7 +132,7 @@
     {
       "date": "2026-10-07",
       "morning": "daily-vocab/2026-10-07-am.html",
-      "evening": null,
+      "evening": "daily-vocab/2026-10-07-pm.html",
       "source": "english",
       "range": "요지 파악 04 및 주장 파악 05 · empathy → servant leader",
       "count": 25
